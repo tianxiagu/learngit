@@ -1,0 +1,68 @@
+<!--pages/cart/cart.wxml-->
+<view wx:if="{{!proList.length}}" style="text-align:center;">
+  <view class="ebl">购物车快饿瘪了T_T</view>
+  <view class="tdbb">快给我挑点宝贝</view>
+  <text class="scan">去逛逛</text>
+</view>
+<view wx:else>
+
+  <view class="top-bg"></view>
+  <!-- 商品列表 -->
+  <view class="prolist-box">
+    <view class="prolist-item" wx:for="{{proList}}" wx:key="{{index}}">
+      <view class="pro" data-index="{{index}}" style="{{item.left}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE">
+
+        <!-- 商品选择 -->
+        <view class="pro-select pro-select2" wx:if="{{item.status}}">
+          <image wx:if="{{item.is_selected}}" mode="widthFix" src="./img/cart-select-icon.png" data-index="{{index}}" catchtap='cancalPro'></image>
+          <text class="quan" wx:else data-index="{{index}}" catchtap='selectPro'></text>
+        </view>
+        <view class="pro-select" wx:else>
+          <text class="loseText">失效</text>
+        </view>
+
+        <!-- 商品图片 -->
+        <view class="pro-img">
+          <image mode="aspectFill" src="{{item.mainImgUrl}}"></image>
+        </view>
+
+        <!-- 商品标题 标签 价格 数量  -->
+        <view class="pro-info">
+          <view class="pro-name">{{item.itemTitle}}</view>
+          <view class="pro-sku">
+            <text wx:for="{{item.itemProperty}}" wx:for-item="propname" wx:for-index="propindex" wx:key="{{propindex}}">{{propname}}</text>
+          </view>
+          <view class="pro-priceNum">
+            <view class="pro-price">￥{{item.price}}</view>
+            <view class="pro-num" wx:if="{{item.status}}">
+              <text class="decrease {{item.num<2?'disabled':''}}" catchtap="decreaseProNum" data-index="{{index}}">-</text>
+              <input type="number" value="{{item.quantity}}" bindblur="blurProNum" data-index="{{index}}" />
+              <text class="increase" catchtap="increaseProNum" data-index="{{index}}">+</text>
+            </view>
+            <view class="lose" wx:else>商品已失效</view>
+          </view>
+        </view>
+
+      </view>
+      <view class="del" catchtap='delItem' data-index="{{index}}">删除</view>
+    </view>
+  </view>
+
+  <!-- 底部确认结算提交 -->
+  <view class="bottom-box">
+    <view class="bottom-detail">
+      <view class="select-all">
+        <image wx:if="{{isSelectAll}}" mode="widthFix" src="./img/cart-select-icon.png" catchtap="cancelSelectAll"></image>
+        <text wx:if="{{isSelectAll}}" catchtap="cancelSelectAll">全选</text>
+        <text class="selected-icon" wx:if="{{!isSelectAll}}" catchtap="selectAll"></text>
+        <text wx:if="{{!isSelectAll}}" catchtap="selectAll">全选</text>
+      </view>
+      <view class="bottom-text">
+        合计:
+        <text class="total-price">￥{{totalPrice}}</text>
+      </view>
+      <view class="btn-buy-submit" catchtap='submit'>结算</view>
+    </view>
+  </view>
+
+</view>

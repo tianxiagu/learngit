@@ -1,0 +1,152 @@
+<!--pages/detail/detail.wxml-->
+<view wx:if="{{status===6}}" class="empty">
+  <image mode="widthFix" src="../../images/detail-empty.png"></image>
+  <view>商品已经下架啦</view>
+  <text>查看更多商品</text>
+</view>
+
+<scroll-view wx:else scroll-y="{{!showSku}}" style="height:100vh">
+
+  <!-- prodetail imgs -->
+  <swiper class="prodetail-swiper" interval="3000" autoplay="{{ true }}" circular="{{true}}">
+    <block wx:for="{{ swiperImgs }}" wx:key="{{index}}">
+      <swiper-item>
+        <view class="prodetail-swipe-item">
+          <image src="{{ item }}" bindload="imageLoad" data-index="{{index}}" style="width:{{ swiperImgStyle[index] }}rpx;" data-item="{{item}}" catchtap='prevImage'></image>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!-- prodetail text -->
+  <view class="prodetail-text">
+    <view class="pro-name">{{proObj.itemTitle}}</view>
+    <view class="pro-value">
+      <text class="now-price-icon">¥</text>
+      <text class="now-price">{{proObj.price}}</text>
+      <text class="old-price">¥{{proObj.tagPrice}}</text>
+      <view class="active-time" wx:if="{{remainTime>=0}}">
+        距活动结束
+        <text>{{countDownobj.hour}}</text> :
+        <text>{{countDownobj.min}}</text> :
+        <text>{{countDownobj.sec}}</text>
+      </view>
+    </view>
+    <view class="pro-tag">
+      <view class="tag-item">
+        <image src="../../images/detail-tag01.png"></image>
+        <text>全场包邮</text>
+      </view>
+      <view class="tag-item">
+        <image src="../../images/detail-tag02.png"></image>
+        <text>质量保证</text>
+      </view>
+      <view class="tag-item">
+        <image src="../../images/detail-tag03.png"></image>
+        <text>24小时客服</text>
+      </view>
+      <view class="tag-item">
+        <image src="../../images/detail-tag02.png"></image>
+        <text>假一赔十</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- prodetail info -->
+  <view class="prodetail-info">
+    <view class="info-title">
+      <image mode="widthFix" src="../../images/detail-title.png"></image>
+    </view>
+    <view class="info-imgs">
+      <image wx:for="{{textImgs}}" wx:key="{{index}}" mode="widthFix" src="{{item}}"></image>
+    </view>
+  </view>
+
+  <!-- 底部悬浮栏 -->
+  <view class="prodetail-bottom">
+    <view class="bottom-btn">
+      <navigator class="bottom-btn-toindex" open-type="switchTab" hover-class="none" url="/pages/home/index">
+        <image src="../../images/detail-toindex.png"></image>
+        <text>首页</text>
+      </navigator>
+      <view class="bottom-btn-share" catchtap="shareBtnShow">
+        <image src="../../images/detail-toshare.png"></image>
+        <text>分享</text>
+      </view>
+      <view class="bottom-btn-cart">
+        <view catchtap="skuShow" data-type="1">加入购物车</view>
+      </view>
+      <view class="bottom-btn-buy">
+        <view catchtap="skuShow" data-type="2">立即购买</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部分享弹出框 -->
+  <popup visible="{{showShareBtn}}" bind:cancelEvent="shareBtnCancel">
+    <view class="share-box">
+      <view class="share-btn">
+        <view>
+          <image src="../../images/share_firend.jpg"></image>
+          <text>分享给好友</text>
+          <button open-type="share">分享给好友</button>
+        </view>
+        <view>
+          <image src="../../images/share_circle.jpg"></image>
+          <text catchtap="shareCicleShow">分享到朋友圈</text>
+          <button catchtap="shareCicleShow">分享到朋友圈</button>
+        </view>
+      </view>
+      <view class="share-cancel" catchtap="shareBtnCancel">取消</view>
+    </view>
+  </popup>
+
+  <!-- 底部分享朋友圈弹出框 -->
+  <popup visible="{{showShareCicle}}" bind:cancelEvent="shareCicleCancel">
+    <view class="poster">
+      <view class="poster-img">
+        <image mode="widthFix" src="http://g.hiphotos.baidu.com/image/pic/item/42166d224f4a20a4f8e466989d529822730ed0f3.jpg"></image>
+        <image class="poster-close" src="../../images/detail-close.png" catchtap="shareCicleCancel"></image>
+      </view>
+      <view class="poster-text">保存图片，叫小伙伴们来围观吧～</view>
+      <view class="poster-save" catchtap='saveimage'>
+        <image src="../../images/detail-xiazai.png"></image>
+        保存到相册
+        <button class="saveimg" wx:if="{{!hasAuthSaveImage}}" open-type="openSetting" bindtap='openSetting'></button>
+      </view>
+    </view>
+  </popup>
+
+  <!-- 底部sku弹出框 -->
+  <popup visible="{{showSku}}" bind:cancelEvent="skuCancel">
+    <view>
+      <view class="sku">
+        <view class="sku-proname">LANCOME兰蔻小黑瓶精华肌底液</view>
+        <view class="sku-price">￥{{showPrice}}</view>
+        <!-- sku选择 -->
+        <scroll-view scroll-y="true" style="max-height:700rpx;">
+          <view class="sku-item" wx:for="{{skus}}" wx:key="{{index}}">
+            <view class="sku-name">{{item.propName}}</view>
+            <view class="sku-value">
+              <radio-group class="radio-group" data-index="{{index}}" bindchange="selectProp">
+                <label wx:for="{{item.propValues}}" wx:for-item="tagitem" wx:for-index="tagindex" wx:key="{{tagindex}}" class="{{selectSku[index]===tagitem?'checked':''}} {{item.styleValue[tagindex]?'disabled':''}}">
+                  <text>{{tagitem}}</text>
+                  <radio disabled="{{item.styleValue[tagindex]}}" value="{{tagitem}}" />
+                </label>
+              </radio-group>
+            </view>
+          </view>
+          <view class="sku-num">
+            购买数量
+            <view class="sku-num-coper">
+              <text class="decrease" catchtap="decreaseNum">-</text>
+              <input type="number" value="{{buyNum}}" bindblur="blurNum" />
+              <text class="increase" catchtap="increaseNum">+</text>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+    <view class="sku-save " bindtap="submitSku">提交</view>
+  </popup>
+</scroll-view>

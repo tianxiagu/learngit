@@ -1,0 +1,94 @@
+<template name="returnItem">
+  <view class="product_return">
+    <view class="product_return_info" wx:for="{{returnItem}}" wx:for-item="items" wx:key="{{index}}">
+        <view class="store_info" wx:if="{{items.storeInfo}}">
+                <view class="store_icon">
+                    <image src="{{items.storeInfo.icon}}"></image>
+                </view>
+                <text class="store_name">{{items.storeInfo.name}}</text>
+                <image src="../../../images/small_right.png" class="small_right"></image>
+        </view>
+        <view class="return_item" wx:for="{{items.list}}" wx:for-item="item" wx:for-index="indexs" wx:key="{{indexs}}">
+                <view class="return_pic">
+                    <image src="{{item.pic}}"></image>
+                </view>
+                <view class="return_center">
+                    <view class="renturn_intro">
+                      <text class="return_title">{{item.title}}</text>
+                      <view class="return_price">
+                          <text>￥{{item.price}}</text>
+                          <text>x{{item.num}}</text>
+                      </view>
+                    </view>
+                    <view class="return_tag">
+                        <text wx:for="{{item.tag}}" wx:for-item="itemss" wx:for-index="indexss" wx:key="{{indexss}}">{{itemss}}</text>
+                    </view>
+                </view>
+            </view> 
+        </view>       
+  </view>
+
+
+</template>
+<!-- 分享二维码 -->
+<template name="share">
+  <view class="index_alert" catchtouchmove="touchmove" style="display:{{ewmList.ewmShow===0?'none':'flex'}}">
+    <view class="index_mask" style="height:{{ewmList.clientHeight}}px" bindtap="hideShare"></view>
+    <view class="index_share_content">
+        <view class="index_share_info">
+           <view class="index_share_item" wx:for="{{ewmList.tabList}}" wx:for-item="item" wx:key="{{index}}">
+              <button open-type="{{item.tap}}" hover-class="no" wx:if="{{item.isButton===1}}">
+                <image src="{{item.pic}}"></image>
+                <text>{{item.title}}</text>
+              </button>
+              <view class="index_share_item" bindtap="{{item.tap}}" wx:else>
+                <image src="{{item.pic}}"></image>
+                <text>{{item.title}}</text>
+              </view>
+           </view>
+        </view>
+        <view class="index_cancel" bindtap="hideShare">{{ewmList.cancel}}</view>
+    </view>
+  </view>
+</template>  
+<!-- 售后单详情头部 -->
+<template name="sale_top">
+
+  <view class="detail_top" wx:if="{{detailSale.tab === 6}}">    
+    <image src="../../../images/success.png" class="sale_success" style="margin-left:25px"></image>
+    <view class="detail_success" style="margin-left:10px;">
+      <text class="detail_title">{{detailSale.detail.title}}</text>
+      <text class="detail_reson">{{detailSale.detail.desc}}</text>
+    </view>
+  </view>
+  <view class="detail_top" wx:if="{{detailSale.tab !== 6}}">    
+    <view class="detail_success" style="margin-left:68rpx;">
+      <text class="detail_title">{{detailSale.detail.title}}</text>
+      <text class="detail_reson">{{detailSale.detail.desc}}</text>
+    </view>
+  </view>
+  <!-- <view class="detail_top">
+       <image src="../../images/success.png" class="sale_success" style="margin-left:{{detailSale.tab===6?'35px':'0px'}}" wx:if="{{detailSale.tab===6}}"></image>
+       <view class="detail_success" style="margin-left:{{detailSale.tab===6?'10px':'35px'}};">
+          <text class="detail_title">{{detailSale.detail.title}}</text>
+          <text class="detail_reson" wx:if="{{detailSale.detail.desc}}">{{detailSale.detail.desc}}</text>
+       </view>
+  </view>      -->
+</template>
+<!--退货地址-->
+<template name="return_address">
+   <view class="return_address">
+          <text class="return_label">退货地址</text>
+          <view class="return_detail">
+             <view class="return_user">{{returnInfo.name}}<text>{{returnInfo.mobile}}</text></view>
+             <text class="return_add" decode="true">{{returnInfo.address}}</text>
+          </view>
+       </view>
+</template>
+<!-- 底部加载中 -->
+<template name="btmLoad">
+  <view class="loading" wx:if="{{loading.isLoad||loading.hasData}}">
+    <image src="../../images/load.gif" wx:if="{{loading.isLoad}}"></image>
+    <text wx:if="{{loading.hasData}}">我也是有底线的</text>
+  </view>
+</template>

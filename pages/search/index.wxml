@@ -1,0 +1,31 @@
+<import src="../template/template"/>
+<view class="container">
+   <!-- search -->
+   <view class="index_search">
+      <view class="index_input">
+         <view class="index_pic" wx:if="{{searchTab===0}}">
+            <image src="../../images/search.png"></image>
+         </view>
+         <input placeholder="搜索" value="{{iptValue}}" bindinput="searchValue" bindconfirm="keyCodeBtn"></input>
+      </view>
+   </view>
+
+   <view class="search_list" wx:if="{{searchList.length!==0}}">
+      <navigator url="../detail/index?goodsId={{item.itemId}}" hover-class="no" class="search_item" wx:for="{{searchList}}" wx:for-item="item" wx:key="{{index}}">
+         <view class="search_pic">
+            <image src="{{item.mainImgUrl}}"></image>
+         </view>
+         <view class="search_info">
+            <text class="search_title">{{item.itemTitle}}</text>
+            <view class="search_price">
+              ￥{{item.retailPrice}}<text>￥{{item.tagPrice}}</text>
+            </view>
+         </view>
+      </navigator>
+   </view>
+   <view class="no_data" wx:else>
+      <image src="../../images/detail-empty.png"></image>
+      <text>暂无根据关键词搜索到信息哦</text>
+   </view>
+   <template is="btmLoad" data="{{loading}}"></template>
+</view>

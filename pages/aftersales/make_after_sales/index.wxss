@@ -1,0 +1,275 @@
+/* pages/aftersales/makeaftersales.wxss */
+.item__main{
+  display: flex;
+  box-sizing: border-box;
+  flow-direction: row;
+  background: #fff;
+  padding: 0 15px 15px 15px;
+}
+.img {
+  display: block;
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 5px;
+  margin-right: 6rpx;
+}
+
+.desc {
+  width: 600rpx;
+  background: #fff;
+}
+
+.desc__top {
+  display: flex;
+  flow-direction:row;
+  justify-content: space-between;  
+}
+.title {
+  /* height:53rpx; */
+  /* font-size: 48rpx; */
+  font-size: 24rpx;
+  font-weight:500;
+  color:rgba(0,9,22,1);
+  margin-left: 5px;
+
+}
+
+.extra {
+  margin-left: 4px;
+}
+.price {
+  display: block;  
+  font-size: 26rpx;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(253,109,1,1);
+}
+.count {
+  display: block;
+  font-size: 22rpx;
+  color: #9c9c9c;
+  text-align: right;
+}
+.tags {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 2px;
+}
+.tag {  
+  /* width:36px;
+  height:15px; */
+  width: 72rpx;
+  height: 30rpx;
+  text-align: center;
+  background:rgba(245,245,245,1);
+  border-radius:4rpx;
+  font-size: 20rpx;
+  font-weight: 500;
+  margin-left: 6rpx;
+}
+
+
+
+.refund__model {
+  background: #fff;
+  margin-top: 10px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+.refund__model .refund__row {
+  display: flex;
+  height: 86rpx;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 0 15px;  
+}
+.refund__model .refund__rt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.refund__model .refund__zj {
+  display: flex;
+  height: 43px;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 15px;  
+}
+.refund__model .refund__zj .price {
+  font-size: 26rpx;
+  color: #FD6D01;
+  margin-left: 18px;
+}
+.refund__row .refund__arrow {
+  display: inline-block;
+  width: 14rpx;
+  height: 26rpx;
+  padding-left: 10rpx;
+  
+}
+.refund__row .refund__ipt {
+  width: 70%;  
+  font-size: 26rpx;
+  color:rgba(204,204,204,1);
+}
+
+
+.refund__label {
+  font-size: 26rpx;
+  font-weight: 500;
+  color: #000916;
+}
+.refund__txt {
+  font-size: 26rpx;
+  font-weight: 500;
+}
+.note{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 35px;
+  box-sizing: border-box;
+  padding: 0 15px;
+  font-size: 13px;
+  background: #f3f3f3;
+  color: #9c9c9c;
+}
+
+.aftersales__btn__pos {  
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+.aftersales__btn__pos button {
+  border: none;
+  border-radius: 0;
+  width: 100%;
+  height: 49px;
+  line-height: 49px;  
+background:linear-gradient(90deg,rgba(253,109,1,1),rgba(252,152,3,1));
+  font-size: 14px;
+  color: #fff;
+}
+
+  page {
+    display: block;
+    min-height: 100%;
+    background: #f3f3f3;
+  }
+  .pop__model {
+    display: block;
+    background: #fff;
+    width: 100%;  
+    border-radius: 5px;
+  }
+  .pop__model .pop__opreate{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    overflow: hidden;
+    padding: 15px;
+    margin-bottom: 40px;
+
+  }
+  .pop__opreate .cannel {
+    font-size: 14px;
+    font-family:PingFang-SC-Medium;
+    font-weight:500;
+    color:rgba(253,109,1,1);
+    /* color: #FD6D01; */
+  }
+  .pop__opreate .txt {
+    font-size: 16px;
+    color: #000916;
+  }
+  .pop__opreate .confirm {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(253,109,1,1);
+  }
+
+
+  .pop__model .pop__select {
+    position: relative;
+    width: 100%;
+    line-height: 45px;    
+    text-align: center;
+  }
+  .pop__model .selected__border {
+    position: absolute;
+    border-top: 1rpx solid #ccc;
+    border-bottom: 1rpx solid #ccc;
+    width: 100%;
+    height: 90rpx;
+    line-height: 90rpx;
+  }
+  .pop__select .pop__select__row {
+    width: 100%;
+    display: block;
+    font-size: 36rpx;
+    color: #ccc;
+  }
+ 
+  .pop__select .pop__select__row.active {
+     color: #000916;
+  }
+
+    /* 上传区域 */
+    /* <view class="upload__model">
+  <view class="upload__top">
+    <text class="upload__top__lftxt">上传凭证</text>
+    <text class="upload__top__rttxt">拍照上传,最多6张</text>
+  </view>
+  <view class="upload__bottom">
+    <view class="photo__bg">
+      <image class="photo__pic" src="/images/photo.png"></image>
+    </view>
+  </view>
+</view> */
+.upload__model {background: #fff;padding:30rpx 0;margin-top: 10px; padding: 0 15px; }
+.upload__model .upload__top{height: 86rpx;display: flex; justify-content: space-between; align-items: center;}
+.upload__top .upload__top__lftxt{font-size: 26rpx; color: #000916;}
+.upload__top .upload__top__rttxt{font-size: 26rpx; color:#CCCCCC;}
+
+/* <view class="upload__item" wx:for="{{pics}}">
+    <view>x</view>
+    <image class="img" src="/images/gItem.png"></image>
+  </view> */
+
+.upload__bottom {display: flex; flex-flow: wrap; justify-content: flex-start; margin-left: -10px;margin-top: -15px;padding-bottom: 15px;}
+.upload__item {width:140rpx;height:140rpx;border-radius: 10rpx; position: relative; margin-left: 15px;margin-top:15px;}
+.upload__item .close{position: absolute; top: -10px; right: -5px; }
+.upload__item .close .close_img {
+   width: 34rpx; height: 34rpx;
+  display: inline-block;
+}
+.upload__item .img {width: 140rpx; height: 140rpx;}
+.upload__bottom .photo__bg {background: #EFF1F3; border-radius: 10rpx; display: flex; justify-content: center; align-items: center; width: 140rpx; height: 140rpx; margin-left: 10px;margin-top: 15px;}
+.upload__bottom .photo__pic {box-sizing:border-box;display: inline-block; width: 48rpx; height: 42rpx;}
+
+/* picker */
+
+.picker__title {
+  width: 100%;  
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: #fff;
+}
+.picker__title .txt {
+  color: #000916;
+}
+.picker__title .cannel {
+  font-size: 36rpx;
+  color: rgba(253,109,1,1);
+}
+.picker__title .confirm {
+  font-size: 36rpx;
+  color: rgba(253,109,1,1);
+}

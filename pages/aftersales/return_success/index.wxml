@@ -1,0 +1,28 @@
+<view class="container">
+  <view class="return_success_top">
+      <view class="return_icon">
+          <image src="../../../images/success.png"></image>
+          <text>提交成功</text>
+      </view>
+  </view>
+  <view class="return_show">
+     <view class="return_show_list">
+       <view class="return_show_item">
+           <text class="return_show_label">物流公司</text>
+           <text class="return_show_intro">{{logisticsCompany}}</text>
+       </view>
+       <view class="return_show_item">
+           <text class="return_show_label">物流单号</text>
+           <text class="return_show_intro">{{logisticsOrderNum}}</text>
+       </view>
+       <view class="return_show_item">
+           <text class="return_show_label">退款说明</text>
+           <text class="return_show_intro">{{returnDoc}}</text>
+       </view>
+     </view>
+     <view class="return_show_btn">
+        <view class="return_back" bindtap="gotoIndex">返回首页</view>
+        <navigator hover-class="no" url="/pages/aftersales/index" class="return_active">查看订单</navigator>
+     </view>
+  </view>
+</view>

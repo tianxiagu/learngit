@@ -1,0 +1,69 @@
+/* components/ck-popup/ck-popup.wxss */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.ck-mask {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  animation: fadeIn ease 0.3s forwards;
+}
+
+.ck-mask-cancel {
+  animation: fadeOut ease 0.3s forwards;
+}
+
+.ck-popup-bottom {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 5000;
+  width: 100%;
+  animation: slideUp ease 0.3s forwards;
+}
+
+.ck-popup-cancel {
+  animation: slideDown ease 0.3s forwards;
+}

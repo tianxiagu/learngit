@@ -1,0 +1,22 @@
+<!--pages/template/aftersales.wxml-->
+<template name="afterSalesTpl">
+
+    <view class="item__main" data-type="{{refundStatus}}" data-orderId="{{subOrderId}}" bindtap="goToDetail">
+
+      <image class="img" src="{{itemImgUrl}}"></image>
+      <view class="desc">
+        <view class="desc__top">
+          <text class="title">{{itemTitle}}</text>
+          <view class="extra">
+            <text class="price">￥{{price}}</text>
+            <text class="count">x{{quantity}}</text>
+          </view>
+        </view>       
+        <view class="tags">
+          <text class="tag" wx:for="{{tags}}" wx:for-item="item" wx:for-index="index" wx:key="{{id}}">{{item.name}}</text>
+        </view>        
+      </view>
+    </view>
+</template>
+
+

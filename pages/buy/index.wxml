@@ -1,0 +1,86 @@
+<view>
+
+  <!-- 选择地址 -->
+  <view class="select-address" bindtap='chooseOrderAddress'>
+    <view wx:if="{{!hasAddress}}" class="select-address-notext">点击选择微信地址</view>
+    <view wx:else class="select-address-text">
+      <view class="order-name">{{address.userName}} {{address.telNumber}}</view>
+      <view class="order-adress">
+        <image class="order-address-icon" src="../../images/buy-address.png"></image>
+        {{address.provinceName}}{{address.cityName}}{{address.countyName}}{{address.detailInfo}}
+      </view>
+    </view>
+    <view class="select-address-arrow">
+      <image src="../../images/buy-arrow-right.png"></image>
+    </view>
+    <button class="getaddress" wx:if="{{!hasAuthAddress}}" open-type="openSetting" bindtap='openSetting'></button>
+  </view>
+  <view class="select-address-cap">
+    <image src="../../images/buy-capline.png"></image>
+  </view>
+
+  <!-- 商品展示 -->
+  <view class="prolist">
+    <view class="pro-item" wx:for="{{order.skuList}}" wx:key="{{index}}">
+      <view class="pro-shop">
+        <image class="shop-logo" src="{{order.sellerShopImage}}"></image>
+        <text class="shop-name">{{order.sellerShopName}}</text>
+        <image class="shop-arrow" src="../../images/buy-arrow-right.png"></image>
+      </view>
+      <view class="pro-detail">
+        <view class="pro-img">
+          <image mode="widthFix" src="{{item.mainImgUrl}}"></image>
+        </view>
+        <view class="pro-attr">
+          <view class="pro-text">
+            <view class="pro-name">{{item.itemTitle}}</view>
+            <view class="pro-value">
+              <view class="pro-price">￥{{item.paymentYuan}}</view>
+              <view class="pro-num">x {{item.quantity}}</view>
+            </view>
+          </view>
+          <view class="pro-sku">
+            <text wx:for="{{item.itemProperty}}" wx:for-item="tagItem" wx:key="{{index}}">{{tagItem}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 金额 优惠 运费支付方式 -->
+  <view class="additional-box">
+    <view class="additional-item">
+      <view class="additional-item-name">商品金额</view>
+      <view class="additional-item-value">￥{{order.fee}}</view>
+    </view>
+    <view class="additional-item">
+      <view class="additional-item-name">优惠</view>
+      <view class="additional-item-value">无优惠</view>
+    </view>
+    <view class="additional-item">
+      <view class="additional-item-name">运费</view>
+      <view class="additional-item-value">+￥{{order.logisticsFee}}</view>
+    </view>
+    <view class="additional-item">
+      <view class="additional-item-name">支付方式</view>
+      <view class="additional-item-value">{{order.payMode}}</view>
+    </view>
+  </view>
+
+  <!-- 协议 -->
+  <view class="agreement">提交订单则表示您同意
+    <text>《小海豚服务协议》</text>
+  </view>
+
+  <!-- 底部确认订单提交 -->
+  <view class="bottom-box">
+    <view class="bottom-detail">
+      <view class="bottom-text">
+        共{{order.quantity}}件商品 实付款:
+        <text class="total-price">￥{{order.paymentYuan}}</text>
+      </view>
+      <view class="btn-buy-submit" bindtap="submitOrder">提交订单</view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,23 @@
+.detail_title_info{
+  width: 690rpx;
+  padding: 20rpx 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: #f7f7f7 solid 1rpx;
+  color: #595959;
+  font-size: 24rpx;
+  font-weight: 500;
+  line-height: 30rpx;
+}
+
+.product_back_new{
+  width: 690rpx;
+  padding: 20rpx 30rpx;
+  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+
+}

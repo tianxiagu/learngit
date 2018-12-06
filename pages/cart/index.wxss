@@ -1,0 +1,343 @@
+/* pages/cart/cart.wxss */
+
+page {
+  background-color: #f7f7f7;
+}
+
+.ebl {
+  font-size: 38rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(0, 9, 22, 1);
+  line-height: 50rpx;
+  text-align: center;
+  margin-top: 100rpx;
+}
+
+.tdbb {
+  font-size: 26rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(0, 9, 22, 1);
+  line-height: 40rpx;
+  text-align: center;
+  opacity: 0.5;
+}
+
+.scan {
+  margin-top: 35rpx;
+  display: inline-block;
+  padding: 10rpx 40rpx;
+  border: 2rpx solid #fd6d01;
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  font-family: PingFang-SC-Medium;
+  color: #fd6d01;
+}
+
+/* 顶部背景色 */
+
+.top-bg {
+  height: 120rpx;
+  background: linear-gradient(90deg, rgba(253, 109, 1, 1), rgba(252, 152, 3, 1));
+}
+
+/* 商品列表 */
+
+.prolist-box {
+  padding: 0 22rpx;
+  position: relative;
+  top: -60rpx;
+}
+
+.prolist-item {
+  margin-bottom: 20rpx;
+  position: relative;
+}
+
+/* 商品删除 */
+
+.del {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  z-index: 4;
+  width: 80rpx;
+  height: 80rpx;
+  margin-top: -40rpx;
+  line-height: 80rpx;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 24rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  background: linear-gradient(90deg, rgba(253, 109, 1, 1), rgba(252, 152, 3, 1));
+}
+
+/* 商品 */
+
+.pro {
+  position: relative;
+  z-index: 5;
+  transition: left 0.2s ease-in-out;
+  padding: 30rpx 22rpx 30rpx 17rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+/* 商品选择 */
+
+.pro-select {
+  position: relative;
+  flex: 0 0 51rpx;
+  height: 51rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.pro-select2 {
+  padding-top: 6rpx;
+}
+
+.loseText {
+  display: inline-block;
+  width: 48rpx;
+  padding: 2rpx 0;
+  font-size: 20rpx;
+  border-radius: 6rpx;
+  text-align: center;
+  background: #5a5a5a;
+  color: #fff;
+  vertical-align: top;
+  margin-top: 10rpx;
+}
+
+.quan {
+  display: inline-block;
+  width: 41rpx;
+  height: 41rpx;
+  border: 2rpx solid rgba(153, 153, 153, 1);
+  border-radius: 50%;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+
+.pro-select image {
+  width: 41rpx;
+  height: 41rpx;
+}
+
+/* 商品图片 */
+
+.pro-img {
+  flex: 0 0 180rpx;
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin-left: 15rpx;
+}
+
+.pro-img>image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 商品标题 标签 价格 数量 */
+
+.pro-info {
+  margin-left: 24rpx;
+  height: 180rpx;
+  position: relative;
+  flex: 1;
+}
+
+.pro-name {
+  font-size: 24rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(0, 9, 22, 1);
+  line-height: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.pro-sku>text {
+  font-size: 20rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(51, 51, 51, 1);
+  line-height: 30rpx;
+  height: 30rpx;
+  background: rgba(245, 245, 245, 1);
+  border-radius: 4rpx;
+  padding: 0 17rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+}
+
+.pro-priceNum {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 40rpx;
+  width: 100%;
+  font-size: 0;
+  display: flex;
+}
+
+.pro-price {
+  flex: 1;
+  font-size: 26rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(253, 109, 1, 1);
+  line-height: 40rpx;
+}
+
+.pro-num {
+  flex: 0 0 150rpx;
+  font-size: 0;
+}
+
+.lose {
+  font-size: 24rpx;
+  font-family: PingFang-SC-Medium;
+  color: rgba(153, 153, 153, 1);
+  line-height: 40rpx;
+}
+
+/* 加减商品 */
+
+.pro-num > text {
+  display: inline-block;
+  height: 40rpx;
+  width: 47rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: 700;
+  vertical-align: top;
+  color: rgba(152, 152, 152, 1);
+  background-color: rgba(245, 245, 245, 1);
+}
+
+.pro-num > text.disabled {
+  background: rgba(250, 250, 250, 1);
+  color: rgba(199, 199, 199, 1);
+}
+
+.decrease {
+  border-right: 2rpx solid #fff;
+}
+
+.increase {
+  border-left: 2rpx solid #fff;
+}
+
+.pro-num>input {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  height: 40rpx;
+  min-height: 40rpx;
+  line-height: 40rpx;
+  width: 52rpx;
+  text-align: center;
+  font-size: 26rpx;
+  font-family: DIN-Medium;
+  font-weight: 700;
+  color: rgba(51, 51, 51, 1);
+  background: rgba(245, 245, 245, 1);
+}
+
+/* 底部确认订单提交 */
+
+.bottom-box::after {
+  content: '';
+  display: block;
+  height: 120rpx;
+  width: 100%;
+}
+
+.bottom-detail {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 108rpx;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 1);
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  z-index: 5;
+}
+
+.select-all {
+  flex: 0 0 111rpx;
+  width: 111rpx;
+  font-size: 26rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(89, 89, 89, 1);
+  line-height: 40rpx;
+}
+
+.selected-icon {
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  border: 2rpx solid rgba(153, 153, 153, 1);
+  border-radius: 50%;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+
+.select-all image {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: top;
+}
+.select-all>text{
+  padding: 10rpx 0 10rpx 10rpx;
+}
+
+.bottom-text {
+  flex: 1;
+  font-size: 24rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(0, 9, 22, 1);
+  line-height: 30rpx;
+  text-align: right;
+}
+
+.bottom-text>text {
+  color: #fd6d01;
+}
+
+.btn-buy-submit {
+  flex: 0 0 218rpx;
+  width: 218rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: linear-gradient(90deg, rgba(253, 109, 1, 1), rgba(252, 152, 3, 1));
+  border-radius: 40rpx;
+  font-size: 24rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  margin-left: 30rpx;
+}

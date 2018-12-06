@@ -1,0 +1,168 @@
+<!--pages/order/detail/detail.wxml-->
+
+<view>
+  <!-- 状态 -->
+  <view class='state'>
+    <view class='stateWords'>
+      <text>{{state[orderdata.status-1].name}}</text>
+
+      <text wx:if="{{orderdata.status==1}}" class='time'>还剩{{m}}:{{s}}支付时间</text>
+      <text wx:if="{{orderdata.status==2}}" class='time'>将在  2  天  4 小时发货</text>
+      <text wx:if="{{orderdata.status==3}}" class='time'>还剩  2  天  4 小时自动确认</text>
+    </view>
+    <image src='{{state[orderdata.status-1].pic}}'></image>
+  </view>
+
+  <!-- 个人信息 -->
+  <view class='personal'>
+    <view class='personaPic'>
+      <image class='icon' src='../../../images/order/address.png'></image>
+    </view>
+
+    <view>
+      <view class='personalMsg'>
+        <text>{{adresdata.wxNickName}}</text>
+        <text class='tel'>{{adresdata.mobile}}</text>
+      </view>
+      <view>{{adresdata.receivingAddress}}</view>
+    </view>
+  </view>
+  <!-- 物流信息 -->
+  <view wx:if="{{orderdata.status==3||orderdata.status==5 || orderdata.status==4}}" class='personal send'>
+    <view class='personaPic'>
+      <image class='icon' src='../../../images/order/deliver.png'></image>
+    </view>
+    <!-- 个人信息 -->
+    <view bindtap='viewLogistics'>
+      <view class='personalMsg'>
+        <text style='color:#5495D8'>叶不修</text>
+      </view>
+      <view class='sendtime'>2018.11.14 11:26</view>
+    </view>
+    <image class='goto' src='../../../images/order/goto.png'></image>
+  </view>
+
+  <!-- 货物信息 -->
+  <view class='item'>
+    <view class='top'>
+      <!-- 店铺信息 -->
+      <view class='shop' bindtap='toshop'>
+        <image class='shoplogo' src='../../../images/order/shoplogo.png'></image>
+        <text class='shopName'>{{orderdata.sellerShopName}}</text>
+        <image class='shopgo' src='../../../images/order/goto.png'></image>
+      </view>
+      <!-- 商品信息 -->
+      <view class='goods' wx:for="{{orderdata.itemList}}" wx:key="index">
+        <view class='goodspic'>
+          <image class='goodimg' src='{{item.mainImgUrl}}'></image>
+        </view>
+        <view class='goodsmsg'>
+          <text class='goodsTitle'>{{item.itemTitle}}</text>
+          <view class='goodsSzie'>
+            <text wx:for="{{item.itemProperty}}" wx:for-item="itemlist" wx:key="key">{{itemlist}}</text>
+            <!-- <text>35</text> -->
+          </view>
+        </view>
+        <view class='moneys'>
+          <view class='price'>
+            <text class='money_num'>¥</text> {{item.paymentYuan}}
+          </view>
+          <view class='num'>x {{item.quantity}}</view>
+          <view wx:if="{{orderdata.status==3}}" bindtap='toaftersale' data-ids="{{item.bizOrderId}}" id="1" class='aftersale'>申请售后</view>
+          <view wx:if="{{orderdata.status==5}}" bindtap='toaftersale' id="2" data-ids="{{item.bizOrderId}}" class='aftersale'>{{item.status==6?"退款中":item.status==7?"售后成功":"售后失败"}}</view>
+        </view>
+
+      </view>
+
+    </view>
+
+    <!-- 钱钱 -->
+    <view class='allMoney'>
+      <view class='money'>
+        <text>商品金额</text>
+        <view>
+          <text class='money_num'>¥</text>{{orderdata.fee}}
+        </view>
+      </view>
+      <view class='money'>
+        <text>运费</text>
+        <view>
+          <text class='money_num'>¥</text> {{orderdata.logisticsFee}}
+        </view>
+      </view>
+    </view>
+    <view class='realyMoney'>
+      <text>实付款</text>
+      <view class='realyMoneynum'>
+        <text class='money_num'>¥</text> {{orderdata.paymentYuan}}
+      </view>
+    </view>
+  </view>
+
+  <!-- 订单信息 -->
+  <view class='order'>
+    <view class='orderitem'>
+      <text>订单编号</text>
+      <text>{{orderdata.bizOrderId}}</text>
+    </view>
+    <view wx:if="{{orderdata.payMode}}" class='orderitem'>
+      <text>支付方式</text>
+      <text>{{orderdata.payMode}}</text>
+    </view>
+    <view class='orderitem'>
+      <text>创建时间</text>
+      <text>{{orderdata.orderCreateTime}}</text>
+    </view>
+    <view wx:if="{{orderdata.payTime}}" class='orderitem'>
+      <text>支付时间</text>
+      <text>{{orderdata.payTime}}</text>
+    </view>
+    <view wx:if="{{orderdata.consignTime}}" class='orderitem'>
+      <text>发货时间</text>
+      <text>{{orderdata.consignTime}}</text>
+    </view>
+    <view wx:if="{{orderdata.confirmTime}}" class='orderitem'>
+      <text>成交时间</text>
+      <text>{{orderdata.confirmTime}}</text>
+    </view>
+    <view wx:if="{{orderdata.close}}" class='orderitem lastorderItem'>
+      <text>关闭时间</text>
+      <text>{{orderdata.close}}</text>
+    </view>
+  </view>
+
+
+  <!-- 操作 -->
+  <view class='action'>
+    <view>
+        <view wx:if="{{orderdata.status==1}}" >
+          共{{orderdata.totalNum}}件商品 需付款：
+          <text class='money_num realyMoneynum'>¥</text> 
+          <text class='realyMoneynum font'>{{orderdata.paymentYuan}}</text>
+          
+        </view>
+    </view>
+    <view class='allbtn'>
+      <view wx:if="{{orderdata.status==2&&orderdata.allowCancelOrder===true||orderdata.status==1}}" class='fail' bindtap='action' data-ids="{{orderdata.bizOrderId}}" id="1">取消订单</view>
+      <view wx:if="{{orderdata.status==1}}" bindtap='pay'>去支付</view>
+      <view wx:if="{{orderdata.status==2}}" class='{{remind==false?"":"fail"}}' bindtap='tips'>提醒发货</view>
+      <view wx:if="{{orderdata.status==3||orderdata.status==4}}" class='fail' data-ids="{{item.bizOrderId}}" id="{{item.bizOrderId}}" bindtap='viewLogistics'>查看物流</view>
+      <view wx:if="{{orderdata.status==3}}" bindtap='action' data-ids="{{orderdata.bizOrderId}}" id="2">确认收货</view>
+      <view wx:if="{{orderdata.status==5}}" class='fail' bindtap='delorder' id="{{orderdata.bizOrderId}}">删除订单</view>
+
+    </view>
+  </view>
+
+
+
+</view>
+
+
+
+  <!-- 删除弹窗 -->
+  <view class='delModel' wx:if="{{delmodel}}">
+    <view>确定删除订单吗？</view>
+    <view class='sure' bindtap='delsure'>确定</view>
+    <view style='font-szie:28rpx;' bindtap='delorder'>取消</view>
+  </view>
+<view class='dely' wx:if="{{delmodel}}"></view>

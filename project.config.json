@@ -1,0 +1,17 @@
+{
+	"description": "多挣小程序0.0.1版本",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"appid": "wx3fee92aa4e33327b",
+	"projectname": "duozheng",
+	"condition": {}
+}

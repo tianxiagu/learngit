@@ -1,0 +1,73 @@
+<!--pages/afterpayment/afterpayment.wxml-->
+<view>
+
+  <!-- 支付状态 -->
+  <view class="paystatus-box">
+    <view class="paystatus-icon">
+      <image src="../../images/pay-success.png"></image>
+    </view>
+    <view class="paystatus-text">
+      <view class="text01">支付成功</view>
+      <view class="text02">等待商家发货</view>
+    </view>
+  </view>
+
+  <!-- 支付后操作 -->
+  <view class="after-btn">
+    <view class="after-btn-text">您已成功付款，请耐心等待商家发货</view>
+    <view class="after-btn-btn">
+      <navigator class="btn-toindex" open-type="switchTab" url="/pages/home/index" hover-class="none">返回首页</navigator>
+      <navigator class="btn-toorder" open-type="navigate" url="/pages/order/detail/index" hover-class="none">查看订单</navigator>
+    </view>
+  </view>
+
+  <!-- 商品展示 -->
+  <view class="prolist">
+    <view class="pro-item" wx:for="{{1}}" wx:key="{{index}}">
+      <view class="pro-shop">
+        <image class="shop-logo" src="../img/test01.png"></image>
+        <text class="shop-name">官方旗舰店</text>
+        <image class="shop-arrow" src="../../images/buy-arrow-right.png"></image>
+      </view>
+      <view class="pro-detail">
+        <view class="pro-img">
+          <image mode="widthFix" src="../img/test02.png"></image>
+        </view>
+        <view class="pro-attr">
+          <view class="pro-text">
+            <view class="pro-name">这里是商品标题这里是商品标这里是商品标题这里是商品标 题这里是商品标题</view>
+            <view class="pro-value">
+              <view class="pro-price">￥38.00</view>
+              <view class="pro-num">x 1</view>
+            </view>
+          </view>
+          <view class="pro-sku">
+            <text>白色</text>
+            <text>38</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 金额 优惠 运费支付方式 -->
+  <view class="additional-box">
+    <view class="additional-item">
+      <view class="additional-item-name">订单编号</view>
+      <view class="additional-item-value">201810111545</view>
+    </view>
+    <view class="additional-item">
+      <view class="additional-item-name">支付方式</view>
+      <view class="additional-item-value">微信支付</view>
+    </view>
+    <view class="additional-item">
+      <view class="additional-item-name">创建时间</view>
+      <view class="additional-item-value">2018.09.2 11:49:59</view>
+    </view>
+    <view class="additional-item">
+      <view class="additional-item-name">支付时间</view>
+      <view class="additional-item-value">2018.09.2 11:49:59</view>
+    </view>
+  </view>
+
+</view>

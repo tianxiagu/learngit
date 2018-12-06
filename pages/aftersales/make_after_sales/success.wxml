@@ -1,0 +1,42 @@
+<import src="../../template/template"/>
+<view class="container">
+   <template is="sale_top" data="{{detailSale}}"></template>   
+    <!-- 已提交 -->
+    <view class="detail_money">
+        <view class="detail_title_info">您已成功发起退款申请，请耐心等待审核</view>
+        <view class="product_back_new">
+            <view bindtap="goBackHome" class="product_agin back_index">返回首页</view>
+            <view bindtap="viewOrderList" class="product_agin">查看订单</view>
+        </view>  
+    </view>
+    <template is="returnItem" data="{{returnItem}}"></template>
+    <view class="product_bottom">
+        <view class="product_item">
+           <text class="product_label">{{labelList.returnReson}}</text>
+           <text class="product_info">{{detailSale.detail.returnReson}}</text>
+        </view>
+        <view class="product_item" wx:if="{{detailSale.tab==3}}">
+           <text class="product_label">{{labelList.payMoney}}</text>
+           <text class="product_info">{{detailSale.detail.payMoney}}</text>
+        </view>
+        <view class="product_item">
+           <text class="product_label">{{labelList.returnMoney}}</text>
+           <text class="product_info">{{detailSale.detail.returnMoney}}</text>
+        </view>
+        <view class="product_item">
+           <text class="product_label">{{labelList.applyTime}}</text>
+           <text class="product_info">{{detailSale.detail.applyTime}}</text>
+        </view>
+        <view class="product_item" wx:if="{{detailSale.tab===2}}">
+           <text class="product_label">{{labelList.returnTime}}</text>
+           <text class="product_info">{{detailSale.detail.returnTime}}</text>
+        </view>
+        <view class="product_item">
+           <text class="product_label">{{labelList.returnOrder}}</text>
+           <text class="product_info">{{detailSale.detail.returnOrder}}</text>
+        </view>
+    </view>  
+    <view class="product_back" wx:if="{{detailSale.tab===1}}">
+       <navigator hover-class="no" url="../aftersales/return" class="product_agin">去退货</navigator>
+   </view>  
+</view>

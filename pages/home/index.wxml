@@ -1,0 +1,199 @@
+<import src="../template/template" />
+<view class="container">
+  <!-- search -->
+  <view class="index_search">
+    <view class="index_input">
+      <view class="index_pic" wx:if="{{searchTab===0}}">
+        <image src="../../images/search.png"></image>
+      </view>
+      <input placeholder="搜索" value="{{searchVal}}" bindinput="searchIpt" bindconfirm="searchConfirm"></input>
+    </view>
+  </view>
+  <!-- swiper-->
+  <view class="swiper-info">
+    <swiper indicator-dots="{{swiper.indicatorDots}}" autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}" bindchange="changeSwiper">
+      <navigator hover-class="no" url="{{item.link}}" wx:for="{{swiper.imgUrls}}" wx:for-item="item" wx:key="{{index}}">
+        <swiper-item>
+          <image src="{{item.imgUrl}}" class="slide-image" />
+        </swiper-item>
+      </navigator>
+    </swiper>
+    <view class="swiper_dots">
+        <text wx:for="{{swiper.imgUrls.length}}" wx:key="{{index}}" class="{{index===swiperTab?'active':''}}"></text>
+    </view>
+  </view>
+  <!-- content -->
+  <view class="index_content">
+    <!-- 铺主推荐 -->
+    <view class="index_private">
+      <view class="index_top">
+        <view class="index_top_left">
+          <view class="index_top_header">
+            <image src="{{dataInfo.sellerInfo.sellerWxHeadimgUrl}}" mode="aspectFit"></image>
+          </view>
+          <view class="index_intro">
+            <text>{{dataInfo.sellerInfo.sellerWxNickName}}</text>
+            <text>{{dataInfo.sellerInfo.shopIntroduction}}</text>
+          </view>
+        </view>
+        <view class="index_top_right" bindtap="showEwm">
+          <image src="../../images/ewmMsg.png"></image>
+        </view>
+      </view>
+      <view class="index_tag" wx:if="{{dataInfo.shopRecommendList.length!==0}}">
+        <view class="index_tag_left">
+          <view class="index_icon"></view>
+          <text class="index_title">{{storeTemplate.title}}</text>
+          <text class="index_title_intro">{{storeTemplate.desc}}</text>
+        </view>
+      </view>
+      <view class="index_private_list" wx:if="{{dataInfo.shopRecommendList.length!==0}}">
+        <navigator hover-class="no" url="../active/index?activityId={{item.activityId}}" class="index_private_item" wx:for="{{dataInfo.shopRecommendList}}" wx:for-item="item" wx:key="{{index}}">
+          <view class="index_item_pic">
+            <image src="{{item.recommendBizImgUrl}}"></image>
+          </view>
+          <view class="index_item_right">
+            <view class="index_item_top">
+              <text class="title" decode="true">{{item.recommendBizName}}</text>
+              <text class="over_time" wx:if="{{item.time!='00:00:00'}}">剩余<text>{{item.time}}</text></text>
+            </view>
+            <view class="index_item_bottom">
+              <view class="index_item_header">
+                <image src="{{dataInfo.sellerInfo.sellerWxHeadimgUrl}}"></image>
+              </view>
+              <text class="index_item_intro two_overhide">{{item.recommendBizContent}}</text>
+            </view>
+
+            <view class="index_item_price" wx:if="{{item.recommendBizActivityPrice}}">
+              惊爆价：￥{{item.recommendBizActivityPrice}}
+              <text>原价：￥{{item.recommendBizOriginalPrice}}</text>
+            </view>
+          </view>
+        </navigator>
+
+        <view class="index_show" bindtap="showAndHide" wx:if="{{showtab!==3}}">
+           <text>{{showtab===1?'展开':'收起'}}</text>
+           <view style="border-color:{{showtab===1?'#999999 transparent transparent':'transparent transparent #999999'}};border-width:{{showtab===1?'16rpx 16rpx 0':'0rpx 16rpx 16rpx'}}"></view>
+        </view>
+
+      </view>
+    </view>
+    <!-- 好货会场 -->
+    <view class="index_good" wx:if="{{dataInfo.activityList.length!==0}}">
+      <view class="index_tag">
+        <view class="index_tag_left">
+          <view class="index_icon"></view>
+          <text class="index_title">{{goodsTemplate.title}}</text>
+          <text class="index_title_intro">{{goodsTemplate.desc}}</text>
+        </view>
+      </view>
+      <view class="index_good_list">
+        <navigator hover-class="no" url="../active/index?activityId={{item.recommendBizId}}" class="index_good_item" wx:for="{{dataInfo.activityList}}" wx:for-item="items" wx:key="{{index}}">
+          <view class="index_good_pic">
+            <image src="{{items.activityImgUrl}}"></image>
+          </view>
+          <view class="index_good_intro">
+            <view class="index_small_name">
+              <image src="{{items.activityBrandLogoUrl}}"></image>
+              <text>{{items.activityBrandName}}</text>
+            </view>
+            <text class="index_good_time" decode="true">{{items.EndTime}}</text>
+            <view class="index_good_desc two_overhide">
+              {{items.activityTitle}}
+            </view>
+            <view class="index_good_sku" wx:if="{{item.tag.length!==0}}">
+                <text wx:for="{{items.tag}}" wx:for-item="item" wx:key="{{index}}">{{item}}</text>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <!-- 全部商品 -->
+  <view class="index_all">
+    <view class="index_all_pro">
+      <view class="index_tag">
+        <view class="index_tag_left">
+          <view class="index_icon"></view>
+          <text class="index_title">{{allTemplate.title}}</text>
+          <text class="index_title_intro">{{allTemplate.desc}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="index_tab">
+      <view wx:for="{{tabList}}" wx:for-item="item" wx:key="{{index}}" data-index="{{index}}" class="{{tab===item.index?'index_tab_item tab_active':'index_tab_item'}}" catchtap="tabTap">
+        {{item.title}}
+        <view class="line_bottom" wx:if="{{tab===item.index}}"></view>
+        <view class="price_arrow" wx:if="{{item.index===1}}">
+            <view class="price_up" style="border-color:{{ctrlprice===2?'transparent transparent #fd6d01':'transparent transparent #999999'}}"></view>
+            <view class="price_down" style="border-color:{{ctrlprice!==1?'#999999 transparent transparent':'#fd6d01 transparent transparent'}}"></view>
+        </view>
+      </view>
+    </view>
+
+    <view class="index_all_list">
+      <view class="index_all_item" wx:for-item="item" wx:for="{{allGoodsList}}" wx:key="{{index}}">
+        <navigator hover-class="no" url="../detail/index?goodsId={{item.itemId}}" class="index_item_info">
+          <view class="index_all_pic">
+            <image src="{{item.mainImgUrl}}"></image>
+          </view>
+          <text class="index_all_desc two_overhide">{{item.itemTitle}}</text>
+          <view class="index_all_price">
+            ￥{{item.price}}
+            <text>￥{{item.tagPrice}}</text>
+          </view>
+        </navigator>
+      </view>
+      <template is="btmLoad" data="{{loading}}"></template>
+    </view>
+
+
+  </view>
+  <!-- 快捷按钮 -->
+  <view class="index_fixed">
+    <view class="index_gotop" bindtap="gotoTop" wx:if="{{gotoTop!==1}}">
+      <image src="../../images/top.png"></image>
+    </view>
+    <view class="index_share" bindtap="gotoShare">
+      <image src="../../images/share.png"></image>
+    </view>
+  </view>
+  <template is="share" data="{{ewmList}}"></template>
+
+  <!-- 保存图片 -->
+  <view class="save_pic" catchtouchmove="touchmove" style="display:{{saveShare===1?'flex':'none'}}">
+    <view class="save_mask" bindtap="hideShareCircle"></view>
+    <view class="save_info">
+      <view class="circle_bg">
+         <image src="../../images/circleBg.png"></image>
+      </view>
+    
+      <text class="savepro_msg">保存图片,叫小伙伴们来围观吧~</text>
+      <view class="small_save_btn small_save_pic" bindtap="saveImageToPhotosAlbum1">
+          <image src="{{dataInfo.sellerWxQrcodeUrl}}"></image>
+          <text>保存到相册</text>
+      </view>
+
+      <view class="close_detail" bindtap="hideShareCircle">
+          <image src="../../images/close.png"></image>
+      </view>
+    </view>
+  </view>
+
+  <!-- 弹出商家二维码 -->
+  <view class="small_ewm" catchtouchmove="touchmove" style="display:{{alertEwm===1?'flex':'none'}}">
+    <view class="small_mask" bindtap="hideEwm"></view>
+    <view class="small_alert_ewm">
+      <view class="small_alert_private">
+        <image src="{{dataInfo.sellerInfo.sellerWxQrcodeUrl}}" class="small_bg"></image>
+        <view class="small_save_btn" bindtap="saveImageToPhotosAlbum">
+          <image src="../../images/download.png"></image>
+          <text>保存到相册</text>
+        </view>
+      </view>
+      <view class="close_small" bindtap="hideEwm">
+        <image src="../../images/close.png" class="small_close"></image>
+      </view>  
+    </view>
+  </view>
+</view>

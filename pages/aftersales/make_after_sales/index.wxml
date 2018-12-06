@@ -1,0 +1,85 @@
+<!--pages/aftersales/index.wxml-->
+<import src="../template/aftersales.wxml" />
+<!-- <loading hidden="false">
+  加载中...
+</loading> -->
+<view>
+  <view class="item__main">
+    <image class="img" src="/images/gItem.png"></image>
+    <view class="desc">
+      <view class="desc__top">
+        <text class="title">这里是商品的标题，这里是商品</text>
+        <view class="extra">
+          <text class="price">￥33</text>
+          <text class="count">x1</text>
+        </view>
+      </view>
+      <view class="tags" wx-for="{{item.tags}}" wx:for-item="subtags" wx:key="{{id}}">
+        <text class="tag">黄色</text>
+        <text class="tag">尺寸</text>
+      </view>
+    </view>
+  </view>
+
+  
+    <view class="refund__model">
+      <view class="refund__row" bindtap='onRefundCasePop'>
+        <text class="refund__label">退款原因</text>
+        <view class="refund__rt" bindtap="">
+          <text class="refund__txt">{{pickerVal}}</text>
+          <image class="refund__arrow" src="/images/arrow.png"></image>
+        </view>
+      </view>
+      <view class="refund__zj ">
+        <text class="refund__label">退款金额</text>
+        <text class="price">￥666</text>
+      </view>
+      <view class="note">最多￥{{refundAmount}}，含邮费￥0.00</view>
+      <view class="refund__row">
+        <text class="refund__label">退货说明</text>
+        <input type="text" bindinput="returnDoc"  class="refund__ipt" placeholder='选填'></input>
+      </view>
+    </view>
+    
+
+  <!-- 上传凭证 -->
+  <view class="upload__model">
+    <view class="upload__top">
+      <text class="upload__top__lftxt">上传凭证</text>
+      <text class="upload__top__rttxt">拍照上传,最多6张</text>
+    </view>
+    <view class="upload__bottom">
+      <view class="upload__item" wx:for="{{images}}" wx:key="*this">
+
+        <view class="close" data-index="{{index}}" bindtap="removeImage">
+          <image class="close_img" src="/images/close_btn.png"></image>
+        </view>
+        <image class="img" src="{{item}}"></image>
+      </view>
+      <view class="photo__bg" bindtap="chooseImage">
+        <image class="photo__pic" src="/images/photo.png"></image>
+      </view>
+    </view>
+  </view>
+
+  <!-- 选择理由 -->
+  <view wx:if="{{pickerStatus === 1}}" style='position: absolute; bottom: 0; z-index: 90;width:100%;'>
+    <view class="picker__title">
+      <text class="cannel" bindtap='onCannel'>取消</text>
+      <text class="txt">退款原因</text>
+      <text class="confirm" bindtap='onConfirm'>确定</text>
+    </view>
+    <view>
+      <picker-view indicator-style="height: 50px;" style="width: 100%; height: 150px; text-align: center; background:#fff;"   bindchange="bindPickerChange">
+
+        <picker-view-column>
+          <view wx:for="{{pickerList}}" style="line-height: 50px">{{item}}</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+  </view>
+  <view class="aftersales__btn__pos" bindtap='sendSaleAfter'>
+    <button>提交</button>
+  </view>
+  
+</view>

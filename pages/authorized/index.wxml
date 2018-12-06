@@ -1,0 +1,14 @@
+
+<!--pages/authorization/authorization.wxml-->
+<view class='content'>
+  <image class='bgimg' src="../../images/order/bg.png"></image>
+  <image class='logo' src='{{logo}}'></image>
+  <text class='title'>多挣申请获取以下权限</text>
+  <view class="item">
+    <view class='icon'></view>
+    <text class='words'>获得你的公开信息(昵称，头像等)</text>
+  </view>
+  <button class='btn' open-type='getUserInfo' bindgetuserinfo='onGotUserInfo'>确认授权</button>
+
+</view>
+

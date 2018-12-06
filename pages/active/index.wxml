@@ -1,0 +1,47 @@
+<!--pages/active/index.wxml-->
+<view class="active__page">
+  <view class="active__banner">
+    <image class="img" src="{{activityImgUrl}}"></image>
+    <!-- <image src="{{activityImgUrl}}"></image> -->
+  </view>
+  <view class="active__cutdown" wx:if="{{activityStatus !== 0}}">
+    <text class="active__label">活动倒计时：</text>
+    <text class="hours">{{hours}}</text>:    
+    <text class="minutes">{{min}}</text>:
+    <text class="seconds">{{sec}}</text>    
+  </view>
+  <view class="active__cutdown_end" wx:if="{{activityStatus === 0}}">
+    <text class="active__label">活动已经结束：</text>
+    <text class="hours">{{hours}}</text>:    
+    <text class="minutes">{{min}}</text>:
+    <text class="seconds">{{sec}}</text>    
+  </view>
+
+
+  <view class="active__desc">
+    <view class="active__title">{{activityName}}</view>
+    <view class="active__context">
+      {{activityDesc}}
+    </view>
+  </view>
+
+  <view class="item__goods" wx:for="{{activityList}}" wx:key="id" wx:for-index="idx">
+    <view class="img__goods">
+      <image src="{{item.mainImgUrl}}"></image>
+    </view>
+    <view class="title__goods">
+      {{item.itemTitle}}
+      【百草味-坚果大礼包1380g】每日坚果零食组合混合装箱干果礼盒
+    </view>
+    <view class="extra_goods_info">
+      <view class="price__goods">
+        <text class="price__current"><text class="price_symbol">￥</text>{{item.price}}</text>
+        <text class="price__original"><text class="price_symbol">￥</text>{{item.suggestRetailPrice}}</text>
+      </view>
+      <view class="cart__icon" bindtap='addGoodsToCarts'>
+        <image class="cart__img" src="../../images/cart_icon.png"></image>
+      </view>
+    </view>
+  </view>
+
+</view>

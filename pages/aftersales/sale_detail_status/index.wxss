@@ -1,0 +1,12 @@
+.detail_title_info{
+  width: 690rpx;
+  padding: 20rpx 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: #f7f7f7 solid 1rpx;
+  color: #595959;
+  font-size: 24rpx;
+  font-weight: 500;
+  line-height: 30rpx;
+}

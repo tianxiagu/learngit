@@ -1,0 +1,101 @@
+<view class='max'>
+  <!-- tab -->
+  <view class='tab'>
+    <text class='{{tabIndex==index?"choosed":""}}' wx:for="{{tab}}" wx:key="index" id="{{index}}" bindtap='choosetab'>{{item}}</text>
+  </view>
+
+  <!-- item -->
+  <view class='item' wx:for="{{orderList}}" wx:key="index" wx:for-index="index">
+
+    <view class='top'>
+      <!-- 店铺信息 -->
+      <view class='shop' bindtap='toshop'>
+        <image src='../../images/order/shoplogo.png' class='shoplogo'></image>
+        <text class='shopName'>{{item.sellerShopName}}</text>
+        <image class='shopgo' src='../../images/order/goto.png'></image>
+      </view>
+      <!-- 商品信息 -->
+      <view class='goods {{(key+1)==item.itemList.length?"lastitems":""}}' id="{{item.bizOrderId}}" bindtap='todetail' wx:for="{{item.itemList}}" wx:for-item="itemList" wx:key="index" wx:for-index="key">
+        <image class='goodspic' src='{{itemList.mainImgUrl}}'></image>
+
+        <view class='goodsmsg'>
+          <text class='goodsTitle'>{{itemList.itemTitle}}</text>
+          <view class='goodsSzie'>
+            <text wx:for="{{itemList.itemPropertyArray}}" wx:for-item="itemPropertyArray" wx:key="s">{{itemPropertyArray}}</text>
+          </view>
+
+        </view>
+
+        <view>
+          <view class='price'>¥{{itemList.paymentYuan}}</view>
+          <view class='num'>x {{itemList.quantity}}</view>
+        </view>
+
+      </view>
+
+      <!-- 总计 -->
+      <view class='total'>
+        <text>共{{item.totalNum}}件商品</text>
+        <text>合计：¥{{item.paymentYuan}}</text>
+      </view>
+    </view>
+
+    <!-- 操作，时间 -->
+    <view class='operation'>
+      <view>
+        <text style='margin-left:30rpx'>{{item.statuDesc}}</text>
+      </view>
+
+
+      <view class='time_action'>
+        <view wx:if="{{item.status==1}}" class='time'>
+          {{item.minute}} : {{item.second}}
+        </view>
+
+        <!-- 操作 -->
+        <view class='allbtn'>
+          <view wx:if="{{item.status==2&&item.allowCancelOrder===true||item.status==1}}" class='fail' bindtap='action' data-ids="{{item.bizOrderId}}" id="1">取消订单</view>
+          <view wx:if="{{item.status==1}}" bindtap='pay'>去支付</view>
+          <view wx:if="{{item.status==2}}" class='{{remind==false?"":"fail"}}' bindtap='tips'>提醒发货</view>
+          <view wx:if="{{item.status==3||item.status==4}}" class='fail' id="{{item.bizOrderId}}" bindtap='logistics'>查看物流</view>
+          <view wx:if="{{item.status==3}}" bindtap='action' data-ids="{{item.bizOrderId}}" id="2">确认收货</view>
+          <view wx:if="{{item.status==5}}" class='fail' data-ids="{{item.bizOrderId}}" bindtap='delorder' id="{{index}}">删除订单</view>
+
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空页面 -->
+  <view class='null' wx:if="{{orderList.length==0}}">
+    <image src='../../images/order/null.png'></image>
+    <view>亲，暂时没有相关订单哦～</view>
+  </view>
+
+
+
+  <view class='loading' wx:if="{{!isHasNext}}">我也是有底线的</view>
+
+  <!-- 删除弹窗 -->
+  <view class='delModel' wx:if="{{delmodel}}">
+  lkndkjfnsdkj
+    <!-- <view>确定删除订单吗？</view>
+    <view class='sure' bindtap='delsure'>确定</view>
+    <view style='font-szie:28rpx;' bindtap='del'>取消</view> -->
+  </view>
+</view>
+<view class='dely' wx:if="{{delmodel}}"></view>
+
+
+
+
+
+
+
+
+
+
+<!-- <view wx:if="{{item.status==1}}" class='time {{(item.minute==0&&item.second==0)?"timeover":""}}'>
+          <text class='timer {{(item.minute==0&&item.second==0)?"minuteover":""}}'>{{item.minute}}</text> :
+          <text class='timer {{(item.minute==0&&item.second==0)?"minuteover":""}}'>{{item.second}}</text>
+        </view> -->

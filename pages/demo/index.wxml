@@ -1,0 +1,47 @@
+<!--pages/demo/index.wxml-->
+<import src="../template/aftersales.wxml" />
+
+
+<navigator url="/pages/myself/index" open-type="switchTab">tab菜单跳转</navigator>
+
+<view class="page__bd">
+    <view class="section section_gap" wx:for="{{array}}" wx:for-item="item">
+      <view class="section__title" style="font-size:12px">{{item.text}}</view>
+      <view class="section__ctn">
+        <image style="width: 20px; height: 20px; background-color: #eeeeee;" mode="{{item.mode}}" src="{{src}}"></image>
+      </view>
+    </view>
+  </view>
+
+  <block wx:for="{{images}}" wx:key="*this">
+    <image style="width:40px;height:40px;" src="{{item}}"></image>
+    <view data-idx="{{index}}" bindtap="removeImage">删除</view>
+  </block>
+  <button
+    type="default" size="mini" bindtap="chooseImage" 
+    
+>添加图片</button>
+
+<button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获得手机号码</button>
+
+ <view class="tag__box">
+  <view wx:for="{{tags}}" wx:key="id" wx:for-index="i">
+    <view class="tag__item {{currentItem==item.id?'active__tag':''}}" data-id="{{item.id}}" bindtap="tagChoose">{{item.name}}</view>
+  </view>
+ </view>
+
+ 
+
+ <view>
+    <button bindtap='saveImageToLocal'>保存图片到本地</button>
+  </view>
+
+  <view>
+    <view class="goods__item" wx:for="{{goodsList}}" wx:key="id" wx:for-index="idx">
+        <template is="afterSalesTpl" data="{{...item}}"></template>
+    </view>
+  </view>
+
+
+
+

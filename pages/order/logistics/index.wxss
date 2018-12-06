@@ -1,0 +1,248 @@
+/* pages/order/logistics/logistics.wxss */
+
+page {
+  background: rgba(245, 245, 245, 1);
+}
+
+/* 商品信息 */
+
+.goods {
+  border-top: 1rpx solid #bdbdbd;
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  padding: 24rpx;
+}
+
+.goodspic {
+  width: 66px;
+  height: 66px;
+  margin-right: 20rpx;
+}
+
+.goodsMsg {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-items: left;
+  flex-direction: column;
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #9b9b9b;
+}
+
+.goodsMsg text {
+  margin-right: 10rpx;
+}
+
+.goodsTitle {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #3e3939;
+}
+
+.goodssize {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.goodsprice {
+  font-family: AppleSystemUIFont;
+  font-size: 14px;
+  color: #fd6d01;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+/* 快递 */
+
+.logistics {
+  background-color: #fff;
+  margin: 16rpx 0;
+  padding: 24rpx;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.logistics_top{
+    display: flex;
+  justify-content: flex-start;
+  flex-direction: row
+}
+
+.logisticslogo {
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+}
+
+.logisticsMsg {
+  margin-left: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  font-size: 24rpx;
+  color: #909090;
+}
+
+.logisticsMsg :first-child {
+  font-size: 32rpx;
+  color: #222;
+}
+.copy_view{
+  margin-top:9rpx;
+  color: #909090;
+  font-size:24rpx;
+font-family:PingFang-SC-Medium;
+font-weight:400;
+}
+.copy{
+width:18rpx;
+height:18rpx;
+margin-left: 9rpx;
+}
+
+.address {
+  margin-left: 112rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 14px;
+  color: #9b9b9b;
+  letter-spacing: 0;
+  text-align: left;
+  padding-bottom: 30rpx;
+  border-left: 1rpx solid #bdbdbd;
+  flex-direction: row;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* position: relative; */
+  
+}
+.addressicon {
+  border-radius: 100%;
+  color: #fff;
+  margin-right: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  position: absolute;
+  left: 118rpx;
+  top:30rpx;
+  padding: 6rpx 12rpx;
+}
+.express_list{
+  width: 690rpx;
+  padding: 30rpx 30rpx 100rpx 30rpx;
+  background: #ffffff; 
+}
+.express_item{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 120rpx;
+  position: relative;
+}
+.express_item1{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 50rpx;
+  position: relative;
+}
+.express_left{
+  width:80rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  top:92rpx;
+  left: 0rpx;
+}
+.express_car{
+  width: 36rpx;
+  height: 36rpx;
+}
+.express_left text:first-child,.express_left text:nth-child(2){
+  color: #1a1a1a;
+  font-size: 20rpx;
+  font-weight: 500;
+}
+.express_left text:nth-child(2){
+  color: #909090;
+  width: 100%;
+  text-align: right;
+}
+.express_icon,.express_icon1,.express_icon2{
+  width: 70rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left:80rpx;
+  top: 0rpx; 
+}
+.express_icon1{
+  top: -12rpx;
+}
+.express_goods{
+  width:42rpx;
+  height: 42rpx;
+}
+.express_go{
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-bottom: 6rpx;
+}
+.express_line{
+  width: 2rpx;
+  background: #bdbdbd;
+  height: 110rpx;
+}
+.express_circle{
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 5rpx;
+  background: #bdbdbd;
+}
+.express_font,.express_font1{
+  width: 510rpx;
+  display: flex;
+  flex-direction: row;
+  color: #1a1a1a;
+  font-size: 24rpx;
+  font-weight: 500;
+  line-height: 30rpx;
+  margin-top: 80rpx;
+  position: absolute;
+  left:150rpx;
+  top: 20rpx; 
+}
+.express_font1{
+  margin-top: 0rpx;
+  top: 10rpx;
+}
+.flex{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.icon{
+   border-radius: 2rpx;
+  width: 12rpx;
+  height: 12rpx;
+  border-left: 4rpx solid #919191;
+  border-bottom: 4rpx solid #919191;
+  transform: translate(0, -2%) rotate(-135deg);
+}
+.express_zero{
+  flex-direction: column;
+}

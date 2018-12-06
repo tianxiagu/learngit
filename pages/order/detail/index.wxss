@@ -1,0 +1,378 @@
+page {
+  background: rgba(245, 245, 245, 1);
+  font-family: PingFang-SC-Bold;
+}
+
+/* 状态 */
+
+.state {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  height: 200rpx;
+  background: linear-gradient(90deg, rgba(253, 109, 1, 1), rgba(252, 152, 3, 1));
+}
+
+.state image {
+  width: 249rpx;
+  height: 249rpx;
+}
+
+.stateWords {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  color: #fff;
+  width: 307rpx;
+}
+.stateWords text{
+  width: 300rpx;
+  text-align: left;
+}
+.time {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+}
+
+.timer {
+  font-size: 22rpx;
+  padding: 0rpx 5rpx;
+  border-radius: 8rpx;
+  font-weight: 500;
+  margin: 0 6rpx;
+}
+
+/* 个人信息 */
+
+.personal {
+  background-color: #fff;
+  padding: 30rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  font-size: 26rpx;
+  color: #000916;
+}
+
+.personaPic {
+  width: 100rpx;
+}
+
+.personalMsg {
+  margin-bottom: 20rpx;
+}
+
+.tel {
+  margin-left: 30rpx;
+  color: #9c9c9c;
+}
+
+.icon {
+  width: 58rpx;
+  height: 58rpx;
+  /* background: linear-gradient(90deg, rgba(253, 109, 1, 1), rgba(252, 152, 3, 1)); */
+  border-radius: 50%;
+  margin-right: 30rpx;
+}
+
+/* 发货 */
+
+.send {
+  border-top: 1rpx solid #f7f7f7;
+}
+
+.sendtime {
+  font-size: 24rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(156, 156, 156, 1);
+}
+
+.goto {
+  width: 14px;
+  height: 26px;
+  position: absolute;
+  right: 30rpx;
+}
+
+/* 订单信息 */
+
+.item {
+  margin: 20rpx 0;
+  background-color: #fff;
+}
+
+.top {
+  padding-top: 24rpx;
+}
+
+.shop {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 30rpx;
+}
+
+.shoplogo {
+  width: 30rpx;
+  height: 30rpx;
+  background: linear-gradient(90deg, rgba(253, 109, 1, 1), rgba(252, 152, 3, 1));
+  border-radius: 50%;
+}
+
+.shopgo {
+  width: 10px;
+  height: 18px;
+  border-radius: 2px;
+}
+
+.shopName {
+  font-size: 24rpx;
+  color: rgba(0, 9, 22, 1);
+  margin: 0 21rpx;
+}
+
+.goodspic {
+  flex: 0 0 180rpx;
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 10rpx;
+  background-color: #eee;
+  overflow: hidden;
+}
+
+.goodimg {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.goods {
+  border-bottom: 1rpx solid #f7f7f7;
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  padding: 24rpx;
+}
+
+.goodsTitle {
+  font-size: 24rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(0, 9, 22, 1);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  width: 100%;
+}
+
+.goodsmsg {
+  flex: 0 0 45%;
+  margin: 0 24rpx;
+}
+
+.goodsSzie text {
+  background: rgba(245, 245, 245, 1);
+  border-radius: 4rpx;
+  font-size: 20rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(51, 51, 51, 1);
+  padding: 6rpx 20rpx;
+  margin-right: 20rpx;
+  display: inline-block;
+}
+
+.price {
+  font-size: 24rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(0, 9, 22, 1);
+  text-align: right;
+}
+
+.num {
+  text-align: right;
+  font-size: 22rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(156, 156, 156, 1);
+}
+
+.allMoney {
+  margin-top: 20rpx;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 26rpx;
+  color: #000916;
+}
+
+.money {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 18rpx 30rpx;
+}
+
+.realyMoney {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 30rpx;
+  font-size: 26rpx;
+  color: #000916;
+}
+
+.realyMoneynum {
+  color: rgba(253, 109, 1, 1);
+}
+
+.aftersale {
+  width: 150rpx;
+  height: 54rpx;
+  border: 1rpx solid rgba(156, 156, 156, 1);
+  border-radius: 27rpx;
+  font-size: 24rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(89, 89, 89, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10rpx;
+}
+
+.moneys {
+  flex: 1;
+}
+
+/* 订单信息 */
+
+.order {
+  background-color: #fff;
+  font-size: 26rpx;
+  color: #000916;
+  padding: 30rpx;
+  padding-bottom: 170rpx;
+}
+
+.orderitem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.action {
+  position: fixed;
+  bottom: 0rpx;
+  margin-top: 10rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  padding: 25rpx 30rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+  box-shadow: 0rpx -10rpx 10rpx rgba(177, 185, 224, 0.1);
+  font-size: 24rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: #000916;
+}
+
+.allbtn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.allbtn view {
+  width: 150rpx;
+  height: 54rpx;
+  border: 1px solid rgba(253, 109, 1, 1);
+  border-radius: 27rpx;
+  font-size: 24rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(253, 109, 1, 1);
+  margin-left: 20rpx;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.allbtn .fail {
+  border: 1px solid rgba(176, 174, 174, 1);
+  color: rgba(102, 102, 102, 1);
+}
+
+.lastorderItem {
+  padding-bottom: 100rpx;
+}
+
+.money_num {
+  font-size: 24rpx;
+}
+.font{
+font-size: 30rpx;
+}
+
+
+
+
+/* 弹窗 */
+
+.delModel {
+  position: fixed;
+  bottom: -384rpx;
+  width: 100%;
+  height: 384rpx;
+  background-color: #fbfbfd;
+  z-index: 100;
+  animation: sport 0.3s ease-in-out forwards;
+  transform: translateY(0px);
+}
+
+.delModel view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 33%;
+  font-size: 26rpx;
+  color: #333;
+}
+
+.delModel .sure {
+  height: 28%;
+  font-size: 28rpx;
+  color: rgba(253, 109, 1, 1);
+  border-bottom: 3px solid #e8e8ed;
+  border-top: 1px solid #e7e7e9;
+}
+
+.dely {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+@keyframes sport {
+  0% {
+    bottom: -384rpx;
+    opacity: 1;
+  }
+
+  100% {
+    bottom: 0rpx;
+    opacity: 1;
+  }
+}

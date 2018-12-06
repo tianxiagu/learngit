@@ -1,0 +1,25 @@
+<!--pages/test/index.wxml-->
+<view>
+  <navigator open-type="switchTab" url="/pages/home/index">首页</navigator>
+  <navigator url="/pages/search/index">搜索</navigator>
+
+  <navigator url="/pages/order/index">订单页</navigator>
+  <navigator url="/pages/order/detail/index">订单详情</navigator>
+  <navigator url="/pages/order/logistics/index">物流列表</navigator>
+  <navigator url="/pages/detail/index">商品详情</navigator>
+  <navigator url="/pages/buy/index">购买</navigator>
+  <navigator open-type="switchTab" url="/pages/cart/index">购物车</navigator>
+
+
+  <navigator url="/pages/aftersales/index">售后单</navigator>
+  <navigator url="/pages/aftersales/make_after_sales/index">制作售后单</navigator>
+  <navigator url="/pages/aftersales/return/index"></navigator>
+
+  <navigator url="/pages/aftersales/return_success/index">售后成功</navigator>
+  <navigator url="/pages/aftersales/sale_detail/index">售后详情</navigator>
+  <navigator url="/pages/aftersales/sale_detail_status/index">售后单详情</navigator>
+
+  <navigator url="/pages/authorized/index">授权页</navigator>
+  <navigator open-type="switchTab" url="/pages/personal/index">个人中心</navigator>
+  <navigator url="/pages/active/index">活动中心</navigator>  
+</view>

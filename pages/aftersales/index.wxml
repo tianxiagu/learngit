@@ -1,0 +1,36 @@
+<!--pages/aftersales/index.wxml-->
+<import src="../template/template" />
+<import src="../template/aftersales.wxml" />
+
+<loading hidden="true">
+  加载中...
+</loading>
+
+<view class="after__wrap">
+    <view class="goods__item" wx:for="{{saleOrderList}}" wx:key="id" wx:for-index="idx" wx:if="{{saleOrderList.length!==0}}">
+      <view class="item_wrap">
+        <view class="item__top" bindtap="goToHome">
+          <view class="item_pic">
+            <image class="top__img" src="{{item.sellerShopLogo}}"></image>
+          </view>  
+          <text class="top__name">{{item.sellerShopName}}</text>
+          <image class="top__arrow" src="../../images/arrow.png"></image>
+        </view>  
+        <template is="afterSalesTpl" data="{{...item}}"></template>
+        
+        <text class="reason">退货原因:{{item.refundReason}}</text>
+        <view class="item__bottom">
+          <text class="status">{{item.refundStatus==1?'待审核':item.refundStatus==2?'待退货':item.refundStatus==3?'已退货':item.refundStatus==4?'退款成功':'审核失败'}}</text>
+          <text class="view__detail" wx:if="{{item.refundStatus == 1||item.refundStatus == 3||item.refundStatus == 4||item.refundStatus == 5}}" data-type="{{item.refundStatus}}" data-orderId="{{item.subOrderId}}" bindtap="goToDetail">查看详情</text>
+          <text class="view__detail return__btn" wx:if="{{item.refundStatus == 2}}" data-type="{{item.refundStatus}}" data-orderId="{{item.subOrderId}}" bindtap="gotoReturn">去退货</text>
+        </view>
+      </view>
+    </view>
+    <template is="btmLoad" data="{{loading}}"></template>
+
+    <view class="no_order" wx:if="{{saleOrderList.length===0}}">
+       <image src="../../images/no_order.png" class="no_order_pic"></image>
+       <text>亲，暂时没有相关订单哦~</text>
+    </view>
+  
+</view>

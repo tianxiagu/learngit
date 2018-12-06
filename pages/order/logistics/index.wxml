@@ -1,0 +1,86 @@
+<!--pages/order/logistics/logistics.wxml-->
+
+<view>
+  <view class='goods'>
+    <view>
+      <image src="{{goodsInfo.itemList[0].mainImgUrl}}" class='goodspic'></image>
+    </view>
+    <!-- 商品信息 -->
+    <view class='goodsMsg'>
+      <view style='width:100%;'>
+        <text class='goodsTitle'>{{goodsInfo.itemList[0].itemTitle}}</text>
+        <view class='goodssize'>
+          <text wx:for="{{goodsInfo.itemList[0].itemProperty}}" wx:key="{{index}}">{{item}}</text>
+        </view>
+      </view>
+      <text class='goodsprice'>￥{{goodsInfo.itemList[0].paymentYuan}}</text>
+    </view>
+  </view>
+  <!-- 快递信息 -->
+  <view class='logistics' data-mobile="123456" >
+    <view class='logistics_top'>
+      <image src="{{logistics.logisticsCompanLogoUrl}}" class='logisticslogo'></image>
+      <view class='logisticsMsg'bindtap="gotoPhone" >
+        <text>{{logistics.logisticsCompany}}</text>
+        <view class='flex'>
+          官方电话：{{logistics.logisticsCompanyPhone}}
+          <view class='icon'></view>
+        </view>
+      </view>
+    </view>
+
+
+    <view class='copy_view'>
+      <text>{{logistics.logisticsCompany}}: {{logistics.logisticsNo}}</text>
+      <image bindtap='copy' class='copy' src='../../../images/order/copy.png'></image>
+    </view>
+  </view>
+
+
+
+  <!-- 2是地址，1是实时快递信息 -->
+  <view class="express_list">
+
+    <view class="express_item1">
+      <!-- 时间 -->
+      <!-- 收货 -->
+      <view class="express_icon2">
+        <image src="../../../images/getGoods.png" class="express_goods"></image>
+      </view>
+      <!-- car -->
+      <view class="express_icon1" wx:if="{{index===1}}">
+        <text class="express_line"></text>
+        <image src="../../../images/car.png" class="express_car"></image>
+      </view>
+
+      <!-- 快递位置 -->
+      <view class="express_font1">{{logistics.address}}</view>
+    </view>
+    <view class="express_item" wx:for="{{logistics.logisticInfos}}" wx:key="{{index}}">
+      <!-- 时间 -->
+      <view class="express_left">
+        <text>{{item.eventDateDesc}}</text>
+        <text>{{item.eventTimeDesc}}</text>
+      </view>
+      <!-- car -->
+      <view class="express_icon1" wx:if="{{index===0}}">
+        <text class="express_line"></text>
+        <image src="../../../images/car.png" class="express_car"></image>
+      </view>
+
+      <!-- 线圈 -->
+      <view class="express_icon" wx:else>
+        <text class="express_line"></text>
+        <text class="express_circle"></text>
+      </view>
+
+      <!-- 快递位置 -->
+
+      <view class="'express_font express_zero">
+        <view class='express_go' wx:if="{{index==0}}">运输中</view>
+        {{item.eventDesc}}{{index}}
+      </view>
+    </view>
+  </view>
+
+</view>

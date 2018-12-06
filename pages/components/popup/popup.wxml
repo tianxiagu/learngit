@@ -1,0 +1,6 @@
+<!--components/ck-popup/ck-popup.wxml-->
+<view class="ck-mask ck-mask-bottom {{downing?'ck-mask-cancel':''}}" wx:if="{{visible}}" catchtap="hidePopup" catchtouchmove="stopBubble">
+  <view class="ck-popup ck-popup-bottom {{downing?'ck-popup-cancel':''}}" catchtap="stopBubble">
+    <slot></slot>
+  </view>
+</view>

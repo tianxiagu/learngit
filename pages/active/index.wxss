@@ -1,0 +1,157 @@
+/* pages/active/index.wxss */
+.active__page {
+  margin: 0;
+  padding: 0;
+}
+.active__banner {
+  width: 750rpx;
+  height: 527rpx;
+}
+.active__banner image {
+  width: 100%;
+}
+
+.active__cutdown {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #D5322B;
+  margin-top: 10px;
+}
+.active__label {
+  font-size: 32rpx;
+  color: #D5322B;
+}
+.active__desc {
+  margin-top: 40px;
+}
+.active__cutdown_end {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ccc;
+  margin-top: 10px;
+}
+.active__cutdown_end .active__label {
+  font-size: 32rpx;
+  color: #ccc;
+}
+.active__cutdown_end .hours, .active__cutdown_end .minutes,
+.active__cutdown_end .seconds {
+  width: 52rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  background: #ccc;
+  border-radius: 5px;
+  font-size: 13px;
+  color: #fff;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.active__cutdown .hours, .active__cutdown .minutes,
+.active__cutdown .seconds {
+  width: 52rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  background: #D5322B;
+  border-radius: 5px;
+  font-size: 13px;
+  color: #fff;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+
+.active__desc .active__title {
+  width: 100%;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: 500;
+  margin-bottom: 24rpx;
+}
+.active__desc .active__context {
+  font-size: 28rpx;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(89,89,89,1);
+  padding: 0 35rpx;
+  margin-bottom: 24px;
+}
+
+
+
+.item__goods {
+  margin-top:12rpx;
+  margin-bottom: 20rpx;
+  width:690rpx;  
+  margin: 0 auto 40rpx;
+  background:rgba(255,255,255,1);
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+.item__goods .img__goods {
+  overflow: hidden;
+  width: 690rpx;  
+  margin-bottom: 12rpx;
+}
+.item__goods .img__goods image {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+.title__goods {
+  font-size: 28rpx;
+  color: #000916;
+  box-sizing: border-box;
+  padding: 0 18rpx;
+}
+
+.extra_goods_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 18rpx 18rpx 30rpx;  
+}
+
+.price__current {  
+  font-family:PingFang-SC-Medium;  
+  font-size:20px;
+  font-weight:500;
+  color:rgba(253,109,1,1);
+}
+.price__original {  
+  font-family:PingFang-SC-Medium;  
+  font-size:14px;
+  font-weight:500;
+  text-decoration:line-through;
+  color:rgba(156,156,156,1);
+  margin-left: 15rpx;
+}
+.price__original .price_symbol {
+  text-decoration:line-through;  
+}
+.price__current em, .price__original em {
+  display: inline-block;
+  font-size: 12px;
+}
+.price_symbol {
+  display: inline-block;
+  width: 12px;
+  height: 8px;
+  font-size:12px;
+}
+.cart__icon {
+  display: block;  
+}
+.cart__icon .cart__img {
+  display: inline-block;
+  width: 36rpx;
+  height: 33rpx;
+}

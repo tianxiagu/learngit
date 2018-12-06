@@ -1,0 +1,65 @@
+{
+  "pages": [
+    "pages/home/index",
+    
+    "pages/order/index",
+    
+    "pages/authorized/index",    
+       
+    "pages/order/detail/index",
+    "pages/active/index",
+    "pages/aftersales/index",    
+    "pages/aftersales/make_after_sales/success",
+    "pages/aftersales/sale_detail/index",
+    "pages/aftersales/return_success/index",
+    "pages/aftersales/return/index",
+    "pages/aftersales/make_after_sales/index",
+    "pages/search/index",
+    "pages/order/logistics/index",
+    "pages/buy/index",
+    "pages/cart/index",
+    "pages/paysucess/index",
+    "pages/detail/index",
+    "pages/aftersales/sale_detail_status/index",
+    "pages/personal/index",
+    "pages/template/template",
+    "pages/template/aftersales",
+    "pages/demo/index",
+    "pages/map/index"    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "欢迎来到多挣网络平台",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#f60",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_act.png"
+      },
+      {
+        "pagePath": "pages/cart/index",
+        "text": "购物车",
+        "iconPath": "images/cart.png",
+        "selectedIconPath": "images/cart_act.png"
+      },
+      {
+        "pagePath": "pages/personal/index",
+        "text": "我的",
+        "iconPath": "images/myself.png",
+        "selectedIconPath": "images/myself_act.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
