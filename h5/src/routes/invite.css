@@ -1,0 +1,98 @@
+
+.title {
+    width: 100%;
+    padding: 0.15rem 0.3rem;
+    box-sizing: border-box;
+    color: #000916;
+    font-size: 0.24rem;
+    background-color: #fff;
+    /*margin-bottom: 0.3rem;*/
+    font-family: PingFang-SC-Medium;
+}
+
+.myphoto {
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    background-color: yellow;
+    margin-right: 0.2rem;
+}
+
+.item {
+    padding: 0.16rem 0.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    background-color: #fff;
+    border-bottom: 1px solid #F5F5F5;
+    box-sizing: border-box;
+    color: #000916;
+    font-size: 0.28rem;
+}
+
+.flex {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flexb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flexa {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.personal {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+.personal div{
+   overflow: hidden;
+    text-overflow: ellipsis;
+    width: 2.3rem;
+    white-space: nowrap;
+}
+
+/**/
+.header_right {
+    font-size: 0.24px;
+    color: rgba(89, 89, 89, 1);
+}
+
+.invite_code {
+    padding: 0.21rem 0.3rem;
+    color: #595959;
+    font-size: 0.24rem;
+}
+
+.smal_title {
+    font-size: 0.28rem;
+    color: #000916;
+}
+.btn{
+    margin-left: 0.29rem;
+    width:0.98rem;
+    height:0.48rem;
+    border:0.015rem solid #FD6D01;
+    border-radius:0.24rem;
+    background-color: #fff;
+    color:#FD6D01 ;
+}
+.can_use{
+    font-size: 0.28rem;
+    color: #000916;
+    padding: 0.2rem 0.3rem;
+}
+.used{
+    color: #9C9C9C;
+    font-size: 0.24rem;
+}

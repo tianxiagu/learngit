@@ -1,0 +1,131 @@
+html {  
+  background:rgba(243,244,244,1);
+  height: 100vh;
+  overflow-y: auto;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.normal {
+  font-family: Georgia, sans-serif;
+  /* margin-top: 3em; */
+  text-align: center;
+}
+
+
+
+.card {
+  height: 2.44rem;
+  background: url(../assets/card_bg.png) no-repeat center 0;
+  background-size: 100%;
+  margin:15px;
+}
+.card_vip {
+  height: 2.44rem;
+  background: url(../assets/card_bg_vip.png) no-repeat center 0;
+  background-size: 100%;
+  margin:15px;
+}
+.top {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  padding-top: 10px;
+}
+.topLeft {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.topLeft .avatar{
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: .96rem;
+  height: .96rem;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.topLeft .userName {
+  font-size: 14px;
+  color: #fff;
+}
+.upgradeBtn {
+  width: 75px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: #fff;
+  border:2px solid rgba(255,255,255,1);
+  border-radius:30px;
+}
+.note {
+  display: block;
+  font-size: 14px;
+  text-align: left;
+  font-family: 'PingFang-SC-Medium';
+  color: #fff;
+  margin-top: .36rem;
+  padding-left: .2rem;
+}
+
+.right95 {
+  background: #fff;
+  border-radius: 10px;
+  margin: 0 15px 15px;
+  padding: 15px;
+  
+}
+.title {  
+  width: 100%;
+  text-align: left;  
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'PingFang-SC-Bold';
+  font-size: 14px;
+  color: #333;
+  letter-spacing: 1px;
+
+}
+.splitIcon {
+  display: inline-block;
+  width:4px;
+  height:20px;
+  background:rgba(253,109,1,1);
+  border-radius:2px;
+  margin-right: 5px;
+}
+.numUl {
+  margin: 0; 
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;  
+  list-style: none;
+  margin: 15px 0;
+}
+.numUl .numLi {
+  text-align: center;  
+  margin-top: 15px;
+  
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+  font-family: PingFang-SC-Medium;
+  font-size: 12px;
+
+}
+.numUl .numLi img {
+  display: block;
+  width: 27px;
+  height: 27px;
+}

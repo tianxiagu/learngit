@@ -1,0 +1,7 @@
+
+html, body, :global(#root) {
+  height: 100%;
+  -webkit-tap-highlight-color:transparent;
+  font-family: 'PingFang-SC-Medium';
+}
+

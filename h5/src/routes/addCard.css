@@ -1,0 +1,174 @@
+body {
+    background: #F3F4F4;
+}
+.addcard{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    -webkit-tap-highlight-color:transparent;
+}
+.cardname{
+    height: 1.05rem;
+    padding: 0px 0.3rem;
+    background: #ffffff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 0.3rem;
+    justify-content:space-between;
+}
+.cardname span{
+    color: #000916;
+    font-size: 0.28rem;
+    font-weight: 500;
+}
+.cardname input{
+    width: 77%;
+    height: 0.8rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 0.28rem;
+    font-weight: 500;
+    border: none;
+    outline: none;
+}
+input:hover,input:active{
+    border: none;
+    outline: none;
+}
+.cardname input::-webkit-input-placeholder {
+    color: #E3E3E3;
+    font-size: 0.28rem;
+}
+.bank{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.3rem;
+}
+.bankchoose{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 1.05rem;
+    background: #ffffff;
+    padding: 0px 0.3rem;
+    border-bottom: #f5f5f5 solid 0.01rem;
+}
+.bankchoose span{
+    color: #000916;
+    font-weight: 500;
+    font-size: 0.28rem;
+}
+.bankright{
+    width: 77%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+.bankright select{
+    text-align: right;
+    height: 0.5rem;
+    font-size: 0.3rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    margin-right: 0.3rem;
+}
+.bankright em{
+    color: #000916;
+    font-weight: 500;
+    font-size: 0.3rem;
+    font-style: normal;
+    margin-right: 0.3rem;
+}
+.bankright img{
+    width: 0.18rem;
+    height: 0.28rem;
+}
+.card{
+    margin:0px;
+}
+.nextStep{
+    width: 6.9rem;
+    margin: 0.9rem auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 1.06rem;
+    background: linear-gradient(-90deg, rgba(255, 125, 52, 1), rgba(255, 162, 86, 1));
+    border-radius: 0.53rem;
+    color: #F7F7F7;
+    font-size: 0.3rem;
+    font-weight: 500;
+    padding: 0px;
+    outline: none;
+    border: none;
+}
+
+.modal{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: calc(100vh);
+    z-index: 9999;
+}
+.mask{
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: calc(100vh);
+    background: rgba(0,0,0,0.5);
+}
+.modalChoose{
+    width: 100%;
+    height: calc(30vh);
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    z-index: 99999;
+    background: #ffffff;
+}
+.modalBtn{
+    width: 6.9rem;
+    padding: 0px 0.3rem;
+    height: 0.8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: #f5f5f5 solid 0.01rem;
+}
+.cancel{
+    color: #888888;
+    font-size: 0.28rem;
+}
+.ok{
+    color: #FD6D01;
+    font-size: 0.28rem;
+}
+.chooseBank{
+    width: 100%;
+    display: inline-block;
+    height:1.8rem;
+    margin-top: 0.5rem;
+    overflow-y: auto;
+}
+.chooseBankp{
+    font-size: 0.3rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 0.6rem;
+}

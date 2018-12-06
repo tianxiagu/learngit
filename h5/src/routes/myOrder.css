@@ -1,0 +1,239 @@
+html{
+    overflow: auto !important;
+}
+body {
+    background: #F3F4F4;
+    overflow: auto !important;
+}
+ul,li{
+    margin: 0px;
+    padding: 0px;
+}
+p{
+    margin: 0px;
+    padding: 0px;
+}
+.order{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    -webkit-tap-highlight-color:transparent;
+}
+.topul{
+    width: 100%;
+    display: -webkit-box;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling:touch;
+    flex-direction: row;
+    height: 0.8rem;
+    align-items: center;
+    background: #ffffff;
+    overflow-x: auto;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 999;
+}
+.default,.active{
+    width: 25%;
+    height: 0.8rem;
+    font-size: 0.28rem;
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.active{
+    color: #FD6D01;
+}
+.lineDefault{
+    display: none;
+}
+.lineActive{
+    display: flex;
+    position: absolute;
+    bottom: 0rem;
+    width: 0.8rem;
+    height: 0.05rem;
+    background: #FD6D01;
+}
+.orderul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+    margin-top: 0.8rem;
+}
+.orderli{
+    padding: 0px 0.3rem;
+    background: #ffffff;
+    margin-top: 0.2rem;
+}
+.user{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.2rem;
+    align-items: center;
+}
+.user img{
+    width: 0.3rem;
+    height: 0.3rem;
+    border-radius: 0.15rem;
+}
+.user span{
+    color: #000916;
+    font-size: 0.24rem;
+    font-weight: 500;
+    margin-left: 0.1rem;
+}
+.goods{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-top: 0.2rem;
+}
+.goods img{
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 0.1rem;
+}
+.goods_intro{
+    width: 4.85rem;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.25rem;
+    justify-content: space-between;
+}
+.intro{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.userp{
+    color: #000916;
+    font-size: 0.24rem;
+    line-height: 0.35rem;
+    font-weight: 500;
+    margin: 0px;
+    padding: 0px;
+}
+.two_overflow {
+    width: 3.13rem;
+    height: 0.7rem;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    /* autoprefixer: off */
+    -webkit-box-orient:vertical;
+    /* autoprefixer: on */
+    -webkit-line-clamp:2;
+}
+.number{
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-end;
+}
+.number span{
+    color: #000916;
+    font-size: 0.26rem;
+    font-weight: 500;
+}
+.number em{
+    font-style: normal;
+    font-size: 0.22rem;
+    font-weight: 500;
+    color: #9C9C9C;
+    margin-top: 0.05rem;
+}
+.tags{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.tags span{
+    color: #333333;
+    text-align: center;
+    font-size: 0.2rem;
+    font-weight: 500;
+    padding: 0.05rem 0.05rem;
+    background: #F5F5F5;
+    border-radius: 0.08rem;
+    margin-top: 0.1rem;
+    margin-right: 0.2rem;
+}
+.numAndPrice{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    color: #000916;
+    font-size: 0.24rem;
+    align-items: center;
+}
+.numAndPrice span{
+    font-size: 0.3rem;
+}
+.status{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 0.7rem;
+}
+.status span{
+    color: #FD6D01;
+    font-size: 0.26rem;
+    font-weight: 500;
+}
+.status em{
+    font-style: normal;
+    color: #FD6D01;
+    font-size: 0.24rem;
+    font-weight: 500;
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar
+{
+    width: 0px;
+    height: 0px;
+    background-color: #F5F5F5;
+}
+ 
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+    border-radius: 0px;
+    background-color: #F5F5F5;
+}
+ 
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+    border-radius: 0px;
+    background-color: #555;
+}
+
+/* 加载中 */
+.loading{
+    width: 100%;
+    height: 0.6rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.loading img{
+    width: 0.32rem;
+    height: 0.32rem;
+}
+.loading p{
+    color: #9C9C9C;
+    font-size: 0.24rem;
+}

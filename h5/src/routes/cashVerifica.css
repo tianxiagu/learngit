@@ -1,0 +1,64 @@
+.cashverifica{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: calc(50vh);
+    overflow: hidden;
+}
+.code{
+    margin:0.6rem 0px 0px 0.3rem;
+    display: flex;
+    flex-direction: column;
+}
+.codespan{
+    font-size: 0.52rem;
+    color: #000916;
+    font-weight: bold;
+    font-family: 'PingFang-SC-Bold';
+}
+.codemsg{
+    width: 5.64rem;
+    color: #9C9C9C;
+    font-size: 0.28rem;
+    font-weight: 500;
+    line-height: 0.36rem;
+    margin-top: 0.3rem;
+}
+.iptcode{
+    display: flex;
+    flex-direction: row;
+    margin:0.5rem 0rem 0px 0rem;
+}
+.iptcode input{
+    width:0.8rem;
+    height: 1.15rem;
+    border: none;
+    border-radius: 0px;
+    border-bottom: #e3e3e3 solid 0.04rem;
+    outline: none;
+    background: transparent;
+    text-align: center;
+    font-size: 0.5rem;
+    margin-right: 0.2rem;
+}
+.againget,.getcode{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5rem;
+    color: #9C9C9C;
+    font-size: 0.28rem;
+    font-weight: 500;
+    letter-spacing: 0.03rem;
+}
+.getcode{
+    color: #03a9f4;
+}
+.iptInfo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 3rem;
+}

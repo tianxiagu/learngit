@@ -1,0 +1,84 @@
+body {
+    background: #F3F4F4;
+}
+.todaySales{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.topul{
+    width: 100%;
+    height: 1.6rem;
+    display: flex;
+    flex-direction: row;
+    background: #ffffff;
+}
+.topul li{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.topul li span{
+    color: #595959;
+    font-size: 0.24rem;
+    font-weight: 500;
+}
+.topul li em{
+    font-style: normal;
+    font-size: 0.32rem;
+    font-weight: 500;
+    color: #FD6D01;
+    margin-top: 0.08rem;
+}
+.saleul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.2rem;
+}
+.saleul li{
+    padding: 0.3rem;
+    background: #ffffff;
+    border-bottom: #f3f4f4 solid 0.01rem;
+    display: flex;
+    flex-direction: row;
+}
+.saleul li img{
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 0.1rem;
+}
+.intro{
+    width: 5rem;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.2rem;
+}
+.intro p{
+    width: 100%;
+    color: #000916;
+    font-size: 0.28rem;
+    height: 0.6rem;
+    line-height: 0.3rem;
+    font-weight: 500;
+}
+
+.two_overflow {
+    width: 3.13rem;
+    height: 0.7rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    /* autoprefixer: off */
+    -webkit-box-orient: vertical;
+    /* autoprefixer: on */
+    -webkit-line-clamp: 2;
+}
+.intro span{
+    color: #FD6D01;
+    font-size: 0.24rem;
+    font-weight: 500;
+    margin-top: 0.2rem;
+}

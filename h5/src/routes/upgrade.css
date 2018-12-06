@@ -1,0 +1,334 @@
+html {  
+  background:rgba(243,244,244,1);
+  /* height: 100vh; */
+  overflow: hidden;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.normal {
+  font-family: Georgia, sans-serif;
+  /* margin-top: 3em; */
+  text-align: center;
+}
+.testName {
+  background: red;
+  color: #fff;
+}
+.upgradePage{}
+.cardArea{}
+.cardArea .cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 6.9rem;
+  height: 1.67rem;
+  background: url('../assets/upgrade_top_bg.png') no-repeat;
+  background-size: cover; 
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0.4rem 0.3rem;
+}
+.cardArea .cardTop .txt1 {
+  font-size: 30px;
+}
+.cardArea .cardTop .txt2 {
+  font-size: 18px;
+}
+.cardBottom {
+  background: #fff;
+  width: 6.9rem;
+  height: 1.7rem;
+  margin: 0 auto;  /* overflow-y: auto; */
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  /*解决ios上滑动不流畅*/
+  -webkit-overflow-scrolling: touch;  
+
+}
+
+.cardUl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  
+  
+}
+.cardUl .cardLi {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+
+  width: 2rem;
+  height: 1.57rem;
+}
+.cardUl .cardLi img {
+  width: .7rem;
+  height: .7rem;
+  display: inline-block;
+}
+.cardUl .cardLi .txt {
+  font-size: 14px;
+  color: #333;
+}
+.payArea {
+  /* background: #fff; */
+  width:6.9rem;
+  height:5.64rem;
+  background:rgba(255,255,255,1);
+  border-radius:20px;
+  margin: 0 auto;
+}
+
+.payList {
+  width: 6.9rem;
+  min-height: 1rem;
+  margin: .5rem auto 0;
+}
+.payList .payUl{
+  margin: 0;
+  padding: 0;
+
+}
+.payList .payLi{
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 1px solid #F5F5F5;
+  height: 1rem;
+  padding: 0 .2rem;
+  font-size: 16px;
+}
+.payList .payLi1 {
+  background: url('../assets/alipay_icon.png') no-repeat;
+  background-size: 100%;
+}
+.payList .payLi2 {}
+
+
+.payBtn {
+  display: block;
+  width: 6.3rem;
+  height: 1.06rem;
+  margin-top: .5rem;
+  background:linear-gradient(-90deg,rgba(255,125,52,1),rgba(255,162,86,1));
+  border-radius:53px;
+  text-align: center;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 0 auto;
+}
+
+a:link {color:#fff} /* 未访问的链接 */
+a:visited {color: #fff} /* 已访问的链接 */
+a:hover {color:#fff} /* 当有鼠标悬停在链接上 */
+a:active {color: #fff}
+
+.payBtn:active {
+  color: #fff;
+}
+.payBtn:visited {
+  color: #fff;
+}
+.priceTxt {
+  width: 100%;
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  color: #666;
+  margin: 20px 0;
+}
+
+
+
+.txt1 {
+  font-size: 16px;
+  color: #fff;
+}
+.txt2 {
+  font-size: 13px;
+  color: #fff;
+}
+
+.upgradeRights {
+  margin: 0;
+  padding: 0 .08rem;
+}
+.upgradeList {
+  margin: 0;
+  padding: 0;
+  width: 7.5rem;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  /*解决ios上滑动不流畅*/
+  -webkit-overflow-scrolling: touch;
+}
+.upgradeItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imgBg {
+  width: 1rem;  
+}
+.imgBg img {
+  display: inline-block;
+  width: .5rem;
+  height: .5rem;
+}
+
+.rightsTxt {
+  font-size: 14px;
+  color: #666;
+}
+
+.payPrice {
+  font-size: 16px;
+  color: #333;
+}
+.payModel {}
+.payList {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.payItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+.payBtn {  
+  background:linear-gradient(-90deg,rgba(255,125,52,1),rgba(255,162,86,1));
+  border-radius:.53rem;
+  width: 6.03rem;
+  height: 1.06rem;
+  line-height: 1.06rem;
+  color: #fff;
+}
+.xieyi {
+
+}
+
+
+
+
+
+
+.card {
+  height: 2.44rem;
+  background: url(../assets/card_bg.png) no-repeat center 0;
+  background-size: 100%;
+  margin:15px;
+}
+.card_vip {
+  height: 2.44rem;
+  background: url(../assets/card_bg_vip.png) no-repeat center 0;
+  background-size: 100%;
+  margin:15px;
+}
+.top {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  padding-top: 10px;
+}
+.topLeft {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.topLeft .avatar{
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.topLeft .userName {
+  font-size: 14px;
+  color: #fff;
+}
+.upgradeBtn {
+  width: 75px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: #fff;
+  border:2px solid rgba(255,255,255,1);
+  border-radius:30px;
+}
+.note {
+  display: block;
+  font-size: 14px;
+  text-align: left;
+  font-family: 'PingFang-SC-Medium';
+  color: #fff;
+  padding-left: 10px;
+}
+
+.right95 {
+  background: #fff;
+  border-radius: 10px;
+  margin: 0 15px 15px;
+  padding: 15px;
+  
+}
+.title {  
+  width: 100%;
+  text-align: left;  
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'PingFang-SC-Bold';
+  font-size: 14px;
+  color: #333;
+  letter-spacing: 1px;
+
+}
+.splitIcon {
+  display: inline-block;
+  width:4px;
+  height:20px;
+  background:rgba(253,109,1,1);
+  border-radius:2px;
+  margin-right: 5px;
+}
+.numUl {
+  margin: 0; 
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;  
+  list-style: none;
+  margin: 15px 0;
+}
+.numUl .numLi {
+  text-align: center;  
+  margin-top: 15px;
+  
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+  font-family: PingFang-SC-Medium;
+  font-size: 12px;
+
+}
+.numUl .numLi img {
+  display: block;
+  width: 27px;
+  height: 27px;
+}

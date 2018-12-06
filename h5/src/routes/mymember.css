@@ -1,0 +1,48 @@
+.titl{
+    width: 100%;
+    padding:0.41rem 0.3rem;
+    box-sizing: border-box;
+    color: #595959;
+    font-size: 0.24rem;
+    background-color: #fff;
+    margin-bottom: 0.3rem;
+}
+
+.member_num{
+    color: #FD6D01;
+    font-size: 0.32rem;
+    text-align: left;
+    /*margin-left: 0.1rem;*/
+}
+.photo{
+    width: 0.8rem;
+    height: 0.8rem;
+    /*background-color:red;*/
+    margin-right:0.2rem;
+    border-radius: 50%;
+}
+.item{
+    padding:0.16rem 0.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    background-color: #fff;
+    border-bottom: 1px solid #F5F5F5;
+    box-sizing: border-box;
+    color: #000916;
+    font-size: 0.28rem;
+}
+.flex{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.nickname{
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 3.0rem;
+
+}
